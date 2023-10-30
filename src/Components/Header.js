@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.css'; // Import your CSS file for the header
+import './Header.css';
 
 function Header() {
   return (
@@ -13,13 +13,14 @@ function Header() {
         </div>
       </div>
       <div className="top-right">
-        <button>Recipes</button>
-        <button>Login</button>
-        <button>Register</button>
+        <button className="recipe">Recipes</button>
+        <button className="register">Register</button>
+        <button className="login">Login</button>
       </div>
     </header>
   );
 }
 
 export default Header;
+
 

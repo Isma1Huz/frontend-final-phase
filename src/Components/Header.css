@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #696969; /* Green color */
+    background-color: #ccc8c8; 
     color: white;
     padding: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -19,8 +19,9 @@
   }
   
   .logo img {
-    width: 100px;
+    width: 120px;
     height: 60px;
+    
   }
   
   .search-bar input {
@@ -29,7 +30,8 @@
     padding: 10px;
     font-size: 16px;
     outline: none;
-    margin-left: 10px; /* Add space between logo and search bar */
+    margin-left: 50px; 
+
   }
   
   button {
@@ -38,19 +40,38 @@
     border: none;
     cursor: pointer;
     font-weight: bold;
-    margin-right: 10px; /* Add space between buttons */
+    border-radius: 20px; 
+    margin-right: 50px; 
+    font-size: large;
+    padding: 10px 20px;
   }
   
+  
   button:last-child {
-    margin-right: 0; /* Remove right margin for the last button */
+    margin-right: 0; 
   }
 
   button.login,
   button.register{
     background-color: #34A853;
-    color: white;
+    color: white; 
   }
-  
+
+  button.recipe{
+    
+    color: white;
+    border: none;
+    border-radius: 20px; 
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 120px; 
+    &:hover {
+      background-color: #34A853; 
+  }
+
+  }
+ 
 
 .image-container {
     width: 100%;
@@ -67,7 +88,6 @@
 
 .dropdown {
     flex: 0 0 23%;
-    /* Adjust the width as needed */
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
@@ -84,9 +104,24 @@ select {
     width: 100%;
     padding: 5px;
     border: none;
-    /* Remove borders */
     background-color: transparent;
-    /* Remove the dropdown background */
 
+}
+
+.image-text{
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  height: 100%;
+  
+  padding-left: 100px;
+  padding-right: 100px;
+  color: white;
+  font-size: 90px;
+  font-family: 'Dancing Script', cursive;
+  margin-right: 100px;
 }
   

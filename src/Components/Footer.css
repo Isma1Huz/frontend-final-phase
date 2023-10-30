@@ -1,5 +1,5 @@
 .app-footer {
-    background-size: cover; /* Scale the image to cover the entire footer */
+    background-size: cover; 
     background-repeat: no-repeat;
     background-position: center center;
     color: white;
@@ -12,7 +12,7 @@
     flex: 1;
     text-align: center;
     padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7); /* Add a semi-transparent background for text readability */
+    background-color: rgba(0, 0, 0, 0.7); 
   }
   
   .footer-column h3 {
