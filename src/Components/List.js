@@ -1,28 +1,61 @@
-import React, { useState, useEffect } from 'react';
-import './List.css'; // Import your CSS file for the list
+import React from 'react';
+import './List.css';
+
+
+import foodImage1 from './images/food1.jpg';
+import foodImage2 from './images/food2.jpg';
+import foodImage3 from './images/food3.jpg';
+import foodImage4 from './images/food4.jpg';
+import foodImage5 from './images/food5.jpg';
+import foodImage6 from './images/food6.jpg';
 
 function List() {
-  const [restaurants, setRestaurants] = useState([]);
-
-  useEffect(() => {
-    fetch('https://example-data.draftbit.com/restaurants?_limit=10')
-      .then((response) => response.json())
-      .then((data) => setRestaurants(data))
-      .catch((error) => console.error('Error fetching data:', error));
-  }, []);
+  const foodItems = [
+    {
+      id: 1,
+      name: 'Food Item 1',
+      preparationTime: 30,
+      image: foodImage1,
+    },
+    {
+      id: 2,
+      name: 'Food Item 2',
+      preparationTime: 45,
+      image: foodImage2,
+    },
+    {
+      id: 3,
+      name: 'Food Item 3',
+      preparationTime: 60,
+      image: foodImage3,
+    },
+    {
+      id: 4,
+      name: 'Food Item 4',
+      preparationTime: 25,
+      image: foodImage4,
+    },
+    {
+      id: 5,
+      name: 'Food Item 5',
+      preparationTime: 40,
+      image: foodImage5,
+    },
+    {
+      id: 6,
+      name: 'Food Item 6',
+      preparationTime: 50,
+      image: foodImage6,
+    },
+  ];
 
   return (
-    <div className="restaurant-list">
-      {restaurants.map((restaurant) => (
-        <div key={restaurant.id} className="restaurant-card">
-          <img
-            src={restaurant.image}
-            alt={restaurant.name}
-            className="restaurant-image"
-          />
-          <div className="restaurant-details">
-            <h3 className="restaurant-name">{restaurant.name}</h3>
-          </div>
+    <div className="food-list">
+      {foodItems.map((foodItem) => (
+        <div className="food-card" key={foodItem.id}>
+          <img src={foodItem.image} alt={foodItem.name} />
+          <h3>{foodItem.name}</h3>
+          <p>Preparation Time: {foodItem.preparationTime} minutes</p>
         </div>
       ))}
     </div>
@@ -30,6 +63,8 @@ function List() {
 }
 
 export default List;
+
+
 
 
   

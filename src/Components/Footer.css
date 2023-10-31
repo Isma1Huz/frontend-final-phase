@@ -1,34 +1,77 @@
 .app-footer {
-    background-size: cover; 
-    background-repeat: no-repeat;
-    background-position: center center;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  .footer-column {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7); 
-  }
-  
-  .footer-column h3 {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .footer-column p {
-    font-size: 14px;
-    margin-top: 5px;
-  }
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #333; /* Choose your preferred background color */
+  color: white;
+  padding: 20px;
+}
 
-  ul {
-    list-style-type: none;
-    position: relative;
-  }
+.footer-column {
+  flex: 1;
+  text-align: center;
+}
 
+.company-logo img {
+  width: 100px; /* Adjust the logo width as needed */
+}
 
-  
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icon img {
+  width: 24px; /* Adjust the social media icon size as needed */
+}
+
+.rights-text {
+  font-size: 12px; /* Adjust the text size as needed */
+}
+
+ul {
+  list-style-type: none;
+}
+.app-footer {
+  /* Existing styles... */
+}
+
+.footer-column {
+  flex: 1;
+  text-align: center; /* Center-align the text within each column */
+}
+
+.company-logo img {
+  width: 100px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icon img {
+  width: 24px;
+}
+
+.rights-text {
+  font-size: 12px;
+}
+
+/* Add the following styles to center-align the text within the "Fresh Recipes" column */
+.footer-column h3 {
+  text-align: center;
+}
+
+.recipe-list {
+  list-style: none;
+  padding: 0;
+  text-align: center; /* Center-align the list items */
+}
+
+.recipe-list li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
