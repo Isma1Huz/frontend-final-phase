@@ -5,6 +5,7 @@
   background-color: #333; /* Choose your preferred background color */
   color: white;
   padding: 20px;
+  background-image: url('./images/Rectangle\ 50.jpg');
 }
 
 .footer-column {
@@ -32,9 +33,6 @@
 
 ul {
   list-style-type: none;
-}
-.app-footer {
-  /* Existing styles... */
 }
 
 .footer-column {
