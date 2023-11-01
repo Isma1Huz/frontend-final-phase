@@ -1,0 +1,25 @@
+/* Header Container */
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo */
+.logo img {
+    height: 50px; /* Adjust the height as needed */
+    margin-right: 10px;
+}
+
+/* Search Bar */
+.search-bar input {
+    border: 1px solid #ccc;
+    border-radius: 20px; /* Rounded edges */
+    padding: 10px;
+    width: 200px; /* Adjust the width as needed */
+}
+
+/* Header Text */
+h1 {
+    font-size: 1.5rem; /* Adjust the font size as needed */
+    /* Add other text styles as needed */
+}

@@ -1,0 +1,30 @@
+/* List.css */
+
+.food-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.food-card {
+  width: calc(33.33% - 5px); /* Maximum of three cards per row with spacing */
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.food-card img {
+  width: 30%;
+  height: auto;
+}
+
+.food-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.food-card p {
+  font-size: 14px;
+  color: #777;
+}
