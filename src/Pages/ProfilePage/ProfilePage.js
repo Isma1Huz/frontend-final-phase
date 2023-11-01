@@ -29,7 +29,7 @@ function ProfilePage() {
 
   return (
     <div>
-        <Header/>
+        {/* <Header/> */}
         <div className='profileContainer'>
             <div className='first-column'>
                 <img src={profile} className='profiling' alt='Profile' />
@@ -87,7 +87,7 @@ function ProfilePage() {
                 </ul>
                 </div>
             </div>
-            <div className="second-column">
+            {/* <div className="second-column">
                 <h4>Invited Groups</h4>
                 <div>
                 <ul>
@@ -99,12 +99,12 @@ function ProfilePage() {
                     ))}
                 </ul>
                 </div>
-            </div>
+            </div> */}
         </div>
       
 
 
-        <Footer/>
+        {/* <Footer/> */}
         
 
       
