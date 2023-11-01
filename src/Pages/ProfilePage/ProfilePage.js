@@ -66,10 +66,10 @@ function ProfilePage() {
                 </ul>
                 </div>
             </div>
-            <div className='fourth-column'>
+            {/* <div className='fourth-column'>
                 <CreateRecipeModal/>
                 <button>Create a Group</button>
-            </div>
+            </div> */}
 
         </div>
         <div className='groups'>
