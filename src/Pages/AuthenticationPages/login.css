@@ -31,7 +31,7 @@
   font-size: 4rem;
 }
 
-form {
+.my-form {
   display: flex;
   flex-direction: column;
  
@@ -66,7 +66,7 @@ form {
   top: 40px;
 }
 
-button:hover {
+.login-btn:hover {
   background-color: #84BD00;
 }
 .pl3{

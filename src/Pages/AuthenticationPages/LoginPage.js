@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../login.css'
 import loginImage from './WhatsApp_Image_2023-10-26_at_12.17.35-removebg-preview.png';
 
-const LoginPage = () => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,7 +16,7 @@ const LoginPage = () => {
       <img className='img-cl' src={loginImage} alt="login" width="150" /> 
       <div className='containerl'>   
         <h2 className='hl'>Sign In</h2>
-        <form onSubmit={handleLogin}>
+        <form className='my-form' onSubmit={handleLogin}>
           <div>
             <input className='login-inp'
               type="email"
@@ -45,4 +45,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;
