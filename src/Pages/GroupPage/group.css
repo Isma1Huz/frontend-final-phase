@@ -1,0 +1,73 @@
+.form-G {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .containerg {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    width: 800px;
+    height: 550px;
+    position: relative;
+    bottom: 140px;
+  }
+  
+ .group {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3.5rem;
+  }
+  
+  .grouprecipe-input{
+    width: calc(100% - 20px);
+    padding: 27px;
+    margin-bottom: 20px;
+    border: 2px solid #5F8E00;
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  
+ .group-button {
+    width: 250px;
+    padding: 15px;
+    background-color: #84BD00;
+    border: none;
+    border-radius: 13px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    left: 500px;
+  }
+  .group-button1{
+    width: 250px;
+    padding: 15px;
+    background-color: #84BD00;
+    border: none;
+    border-radius: 13px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    top: 47px;
+  
+   
+  
+  }
+  
+  button:hover {
+    background-color: #5F8E00;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+  }
+  
+  button:disabled:hover {
+    background-color: #ccc;
+  }
+  
