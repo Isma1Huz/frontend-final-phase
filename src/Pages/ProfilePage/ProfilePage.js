@@ -73,7 +73,7 @@ function ProfilePage() {
 
         </div>
         <div className='groups'>
-        <div className="second-column">
+        {/* <div className="second-column">
                 <h4>My Groups</h4>
                 <div>
                 <ul>
@@ -86,7 +86,7 @@ function ProfilePage() {
                     ))}
                 </ul>
                 </div>
-            </div>
+            </div> */}
             {/* <div className="second-column">
                 <h4>Invited Groups</h4>
                 <div>
