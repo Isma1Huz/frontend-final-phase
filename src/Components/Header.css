@@ -1,127 +1,69 @@
 .app-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ccc8c8; 
-    color: white;
-    padding: 30px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-  
-  .top-left {
-    display: flex;
-    align-items: center;
-  }
-  
-  .top-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo img {
-    width: 120px;
-    height: 60px;
-    
-  }
-  
-  .search-bar input {
-    border: none;
-    border-radius: 20px;
-    padding: 10px;
-    font-size: 16px;
-    outline: none;
-    margin-left: 50px; 
-
-  }
-  
-  button {
-    background-color: transparent;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    border-radius: 20px; 
-    margin-right: 50px; 
-    font-size: large;
-    padding: 10px 20px;
-  }
-  
-  
-  button:last-child {
-    margin-right: 0; 
-  }
-
-  button.login,
-  button.register{
-    background-color: #34A853;
-    color: white; 
-  }
-
-  button.recipe{
-    
-    color: white;
-    border: none;
-    border-radius: 20px; 
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-right: 120px; 
-    &:hover {
-      background-color: #34A853; 
-  }
-
-  }
- 
-
-.image-container {
-    width: 100%;
-    height: 1%;
-    position: relative;
-    display: inline block;
-}
-
-.dropdown-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.dropdown {
-    flex: 0 0 23%;
-    margin: 5px;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #34A853;
-}
-
-select {
-    width: 100%;
-    padding: 5px;
-    border: none;
-    background-color: transparent;
-
-}
-
-.image-text{
-  position: absolute;
-  top: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  
-  height: 100%;
-  
-  padding-left: 100px;
-  padding-right: 100px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ccc8c8;
   color: white;
-  font-size: 90px;
-  font-family: 'Dancing Script', cursive;
-  margin-right: 100px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+  height: 60px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search {
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  margin-left: 50px;
+}
+
+.header-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-right: 50px;
+  font-size: large;
+  padding: 10px 20px;
+}
+
+.header-button:last-child {
+  margin-right: 0;
+}
+
+.recipe {
+  margin-right: 120px;
+}
+
+.recipe:hover {
+  background-color: #34A853;
+}
+
   
