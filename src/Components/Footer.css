@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #333; /* Choose your preferred background color */
+  background-color: #333;
   color: white;
   padding: 20px;
   background-image: url('./images/Rectangle\ 50.jpg');
@@ -14,34 +14,8 @@
 }
 
 .company-logo img {
-  width: 100px; /* Adjust the logo width as needed */
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.social-icon img {
-  width: 24px; /* Adjust the social media icon size as needed */
-}
-
-.rights-text {
-  font-size: 12px; /* Adjust the text size as needed */
-}
-
-ul {
-  list-style-type: none;
-}
-
-.footer-column {
-  flex: 1;
-  text-align: center; /* Center-align the text within each column */
-}
-
-.company-logo img {
   width: 100px;
+  /* Adjust the logo width as needed */
 }
 
 .social-icons {
@@ -56,9 +30,18 @@ ul {
 
 .rights-text {
   font-size: 12px;
+  font-family: 'Dancing Script', cursive;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-/* Add the following styles to center-align the text within the "Fresh Recipes" column */
+ul {
+  list-style-type: none;
+}
+
+.company-logo img {
+  width: 100px;
+}
+
 .footer-column h3 {
   text-align: center;
 }
@@ -66,7 +49,8 @@ ul {
 .recipe-list {
   list-style: none;
   padding: 0;
-  text-align: center; /* Center-align the list items */
+  text-align: center;
+  /* Center-align the list items */
 }
 
 .recipe-list li {

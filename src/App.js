@@ -1,42 +1,16 @@
-import React from 'react';
-import Header from './Components/Header';
-import Filter from './Components/Filter';
-import Footer from './Components/Footer';
-import List from './Components/List';
+import './App.css';
+import RecipePage from './Pages/RecipePage/RecipePage';
+import RecipeRoom from './RecipeRoom';
 
 
-
-
-
-
-const App = () => {
+function App() {
   return (
-
-    <div>
-
-      <Header />
-
-      <div className="image-container">
-        <img src="image1.png" alt="image" className="image-container" />
-        <div className="image-text">
-  Delicious
-  <br />
-  Recipes
-</div>
-
-      </div>
-
-      <Filter />
-
-      <List />
-
-      <Footer />
-
-
-    
-    </div >
-
+    <div className="App">
+      <RecipeRoom/>
+      <RecipePage/>
+  
+    </div>
   );
-};
+}
 
 export default App;

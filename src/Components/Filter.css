@@ -1,0 +1,110 @@
+.box {
+    height: 42px;
+    position: relative;
+    width: 907px;
+  }
+  
+  .box .group {
+    height: 42px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 915px;
+  }
+  
+  .box .down-arrow {
+    height: 39px;
+    left: 371px;
+    position: absolute;
+    top: 3px;
+    width: 35px;
+  }
+  
+  .box .img {
+    height: 39px;
+    left: 180px;
+    position: absolute;
+    top: 3px;
+    width: 35px;
+  }
+  
+  .box .overlap-group {
+    height: 42px;
+    left: 468px;
+    position: absolute;
+    top: 0;
+    width: 245px;
+  }
+  
+  .box .down-arrow-2 {
+    height: 39px;
+    left: 210px;
+    position: absolute;
+    top: 3px;
+    width: 35px;
+  }
+  
+  .box .text-wrapper {
+    color: #84bd00;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    height: 37px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0px 4px 4px #00000040;
+    top: 0;
+  }
+  
+  .box .down-arrow-3 {
+    height: 39px;
+    left: 872px;
+    position: absolute;
+    top: 3px;
+    width: 35px;
+  }
+  
+  .box .div {
+    color: #84bd00;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    height: 37px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0px 4px 4px #00000040;
+    top: 1px;
+  }
+  
+  .box .text-wrapper-2 {
+    color: #84bd00;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    height: 37px;
+    left: 246px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0px 4px 4px #00000040;
+    top: 1px;
+  }
+  
+  .box .text-wrapper-3 {
+    color: #84bd00;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 30px;
+    font-weight: 500;
+    height: 37px;
+    left: 748px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0px 4px 4px #00000040;
+    top: 1px;
+  }
+  
