@@ -1,12 +1,14 @@
 import React from 'react'
-import LandingPage from './Pages/LandingPage/LandingPage'
 
+import ProfilePage from './Pages/ProfilePage/ProfilePage'
+import RecipePage from './Pages/RecipePage/RecipePage'
+import Notification from './Components/Notification'
 function RecipeRoom() {
   return (
     <div>
-
-      <LandingPage />
-
+        {/* <RecipePage/> */}
+        {/* <Notification/> */}
+        <ProfilePage/>      
     </div>
   )
 }
