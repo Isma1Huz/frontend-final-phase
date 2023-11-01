@@ -1,0 +1,33 @@
+#editProfile{
+    color: blue;
+    cursor: pointer;
+}
+.modalfooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .button {
+    background-color: #509E2F !important;
+    width: 140.82px;
+    height: 34px;
+    position: relative;
+    border-radius: 10px;
+    color: white;
+    font-size: 11px;
+    border: 1px solid black;
+}
+.modalbody .first-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.edit {
+    background-color: #509E2F;
+    border-radius: 10px;
+    width: 78.59px;
+    height: 34px;
+}
