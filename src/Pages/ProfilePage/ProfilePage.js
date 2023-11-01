@@ -52,7 +52,7 @@ function ProfilePage() {
                 </ul>
                 </div>
             </div>
-            <div className="second-column">
+            {/* <div className="second-column">
                 <h4>My Favorites</h4>
                 <div>
                 <ul>
@@ -65,7 +65,7 @@ function ProfilePage() {
                     ))}
                 </ul>
                 </div>
-            </div>
+            </div> */}
             {/* <div className='fourth-column'>
                 <CreateRecipeModal/>
                 <button>Create a Group</button>
