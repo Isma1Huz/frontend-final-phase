@@ -75,7 +75,6 @@
 .header__user-profile,
 .header__notification {
   cursor: pointer;
-  /* position: relative; */
 }
 .header__user-profile-img {
   display: block;
