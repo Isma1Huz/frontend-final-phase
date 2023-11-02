@@ -203,7 +203,7 @@
   .user-profile-popup {
     position: absolute;
     right: 0px;
-    top: 63px;
+    top: 67px;
     width: max-content;
     height: max-content;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
@@ -215,6 +215,8 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
+    z-index: 100;
+    background-color: #ffffff;
   }
 
   .user-profile-popup--show {
