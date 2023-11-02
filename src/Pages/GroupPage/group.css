@@ -70,4 +70,19 @@
   button:disabled:hover {
     background-color: #ccc;
   }
+  @media screen and (max-width: 900px) {
+    .containerg {
+      width: 90%;
+      max-width: 600px;
+      height: auto;
+      bottom: 0;
+    }
+  
+    .group-button,
+    .group-button1 {
+      left: 0;
+      top: 0;
+      margin-top: 20px;
+    }
+  }
   
