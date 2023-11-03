@@ -23,7 +23,6 @@ const GroupPage = () => {
       <div className='containerg'>
         <h2 className='group'>Create a Group Recipe</h2>
         <form onSubmit={handleCreateRecipe}>
-          <div>
             <input className='grouprecipe-input'
               type="text"
               value={recipeTitle}
@@ -31,8 +30,6 @@ const GroupPage = () => {
               placeholder="Recipe Title"
               required
             />
-          </div>
-          <div>
             <input className='grouprecipe-input'
               type="number"
               value={peopleServed}
@@ -40,8 +37,6 @@ const GroupPage = () => {
               placeholder="No. of People Served"
               required
             />
-          </div>
-          <div>
             <input className='grouprecipe-input'
               type="text"
               value={estimatedTime}
@@ -49,7 +44,6 @@ const GroupPage = () => {
               placeholder="Estimated Time"
               required
             />
-          </div>
           <div className="upload-btn-wrapper">
             <button className='group-button1'  onClick={() => document.getElementById('fileInput').click()}>Upload Photo</button>
             <input type="file" id="fileInput" style={{ display: 'none' }} onChange={(e) => setSelectedFile(e.target.files[0])} accept="image/*" />

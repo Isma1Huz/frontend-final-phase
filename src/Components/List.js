@@ -2,12 +2,12 @@ import React from 'react';
 import './List.css';
 
 
-import foodImage1 from './images/food1.jpg';
-import foodImage2 from './images/food2.jpg';
-import foodImage3 from './images/food3.jpg';
-import foodImage4 from './images/food4.jpg';
-import foodImage5 from './images/food5.jpg';
-import foodImage6 from './images/food6.jpg';
+import foodImage1 from '../assets/food1.jpg';
+import foodImage2 from '../assets/food2.jpg';
+import foodImage3 from '../assets/food3.jpg';
+import foodImage4 from '../assets/food4.jpg';
+import foodImage5 from '../assets/food5.jpg';
+import foodImage6 from '../assets/food6.jpg';
 
 function List() {
   const foodItems = [
@@ -47,6 +47,42 @@ function List() {
       preparationTime: 50,
       image: foodImage6,
     },
+    {
+      id: 6,
+      name: 'Food Item 6',
+      preparationTime: 50,
+      image: foodImage6,
+    },
+    {
+      id: 6,
+      name: 'Food Item 6',
+      preparationTime: 50,
+      image: foodImage6,
+    },
+    {
+      id: 6,
+      name: 'Food Item 6',
+      preparationTime: 50,
+      image: foodImage6,
+    },
+    {
+      id: 6,
+      name: 'Food Item 6',
+      preparationTime: 50,
+      image: foodImage6,
+    },
+    {
+      id: 6,
+      name: 'Food Item 6',
+      preparationTime: 50,
+      image: foodImage6,
+    },
+    {
+      id: 6,
+      name: 'Food Item 6',
+      preparationTime: 50,
+      image: foodImage6,
+    }
   ];
 
   return (

@@ -1,12 +1,10 @@
 import "./RecipePage.css";
-import Header from "../../Components/Header";
 import star from "../../assets/star.png";
 import profile from "../../assets/profile.png";
 import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
 import youtube from "../../assets/youtube.png";
 import pintrest from "../../assets/pintrest.png";
-import Footer from "../../Components/Footer";
 
 function RecipePage() {
   const ingredients = [

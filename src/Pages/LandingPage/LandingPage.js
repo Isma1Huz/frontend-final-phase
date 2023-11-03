@@ -1,6 +1,7 @@
 import React from "react";
 import "./LandinPage.css";
-
+import Filter from "../../Components/Filter";
+import List from "../../Components/List";
 function LandingPage() {
   return (
     <div className="landing-page">

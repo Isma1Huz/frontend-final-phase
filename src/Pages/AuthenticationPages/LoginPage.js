@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import '../login.css'
-import loginImage from './WhatsApp_Image_2023-10-26_at_12.17.35-removebg-preview.png';
+import './login.css'
+import { Link } from 'react-router-dom';
+import loginImage from '../../assets/signup.png';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -38,7 +39,7 @@ const Login = () => {
           <button className='login-btn' type="submit">Login</button>
           <p className='pl3'> Forgot your password</p>
           <p className='pl1'> Don't have an account?</p>
-          <p className='pl2'> Create now</p>
+          <Link to="/register" className='pl2'>Create Account</Link>
         </form>
       </div>  
     </div>

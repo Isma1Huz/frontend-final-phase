@@ -8,6 +8,7 @@ import CreateRecipeModal from '../../Components/CreateRecipeModal';
 import { ArrowRight } from 'react-bootstrap-icons'
 
 import EditRecipeModal from '../../Components/EditRecipeModal';
+import { Link } from 'react-router-dom';
 function ProfilePage() {
     const [isModalOpen, setModalOpen] = useState(false); // State variable to control the modal
 
@@ -29,7 +30,6 @@ function ProfilePage() {
 
   return (
     <div>
-        {/* <Header/> */}
         <div className='profileContainer'>
             <div className='first-column'>
                 <img src={profile} className='profiling' alt='Profile' />
@@ -41,7 +41,7 @@ function ProfilePage() {
             <div className="second-column">
                 <h4>My Recipes</h4>
                 <div>
-                <ul>
+                <ul className='recipelistmy'>
                     {myRecipes.map((recipe, index) => (
                     <li key={index}>
                         <p>{recipe.name}</p>
@@ -68,15 +68,17 @@ function ProfilePage() {
             </div>
             <div className='fourth-column'>
                 <CreateRecipeModal/>
+                <Link to="/group">
                 <button>Create a Group</button>
+                </Link>
             </div>
 
         </div>
-        <div className='groups'>
-        <div className="second-column">
+        <div className='groupsbtn'>
+        <div className="second-column invite">
                 <h4>My Groups</h4>
-                <div>
-                <ul>
+                <div className='groupsitem'>
+                <ul  className='invitelist'>
                     {groups.map((recipe, index) => (
                     <li key={index}>
                         <p>{recipe.name}</p>
@@ -87,10 +89,10 @@ function ProfilePage() {
                 </ul>
                 </div>
             </div>
-            <div className="second-column">
+            <div className="second-column invite ">
                 <h4>Invited Groups</h4>
                 <div>
-                <ul>
+                <ul className='invitelist'>
                     {groups.map((recipe, index) => (
                     <li key={index}>
                         <p>{recipe.name}</p>

@@ -1,81 +1,71 @@
-
-.body{
-  position: fixed;
-  
-}
-.img-cl{
- width: 1100px;
- height: 900px;
+.img-cl {
+  width: 65%;
+  height: 85vh;
  position: relative;
- left:300px;
- top: 138px;
-  
- 
+  z-index: 3;
+  top: 5rem;
+  object-fit: cover;
 }
 .containerl {
-  
   margin: 0 auto;
   padding: 20px;
-  background-color: white;
   border-radius: 8px; 
-  border-color: #84BD00;
-  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  position: relative;left: 200px; top: 50px; 
-  width: 350px;
-  height: 400px;
-
+  border-color: #509E2F;
+  position: relative;
+  width: 30%;
+  height: 100%;
+  left: -3rem;
+  top: 8rem;
 }
  
  .hl {
   text-align: center;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .my-form {
   display: flex;
   flex-direction: column;
- 
 }
 
-
-.login-inp  {
+.login-inp {
   margin-bottom: 19px;
-  margin-left: 3px;
-  padding: 8px;
-  border: 2px solid #84BD00;
+  margin-left: 10px;
+  padding: 9px;
+  border: 2px solid #509E2F;
   border-radius: 10px;
-  font-size: 30px;
   position: relative;
   left: 20px;
-
-  
-  
+  width: 100%;
+  padding-left: 1rem;
 }
 
  .login-btn {
   padding: 10px;
-  background-color: #84BD00;
+  background-color: #509E2F;
   color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 20px;
+  margin-bottom: 1rem;
   cursor: pointer;
   width: 100px;
  position: relative;
- left: 200px;
+  left: 10rem;
   top: 40px;
 }
 
 .login-btn:hover {
-  background-color: #84BD00;
+  background-color: #509E2F;
 }
-.pl3{
+
+.pl3 {
 position: relative;
 bottom: 50px;
-left: 150px;
-color:blue;
-right: 10px;
-font-size: 80%
+  color: blue;
+  left: 2rem;  
+  font-size: 80%;
+  cursor: pointer;
 }
 
 .pl1{
@@ -83,24 +73,68 @@ font-size: 80%
   left: 150px;
 }
 
-.pl2{
+.pl2 {
   position: relative;
-  left: 185px;
+  left: 10rem;
   bottom: 20px;
   color: blue;
-  
+  cursor: pointer;
 }
-
-
-
 
 .form-cl {
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 80vh;
-  position: relative;
-  right: 350px;
+  width: 100%;
+}
+@media screen and (max-width: 1200px) {
+  .login-btn {
+    left: 6rem;
+  } 
+  .pl2{
+    left: 6rem;
+  }
+  .pl1{
+    left: 4rem;
+  }
+}
   
+/* Media query for medium-sized screens (e.g., tablets) */
+@media screen and (max-width: 768px) {
+  .containerl {
+    width: 70%;
+    left: -1rem;
+  }
+  .img-cl {
+    display: none;
+  }
+  .login-btn {
+    left: 10rem;
+  } 
+  .pl2{
+    left: 10rem;
+  }
+  .pl1{
+    left: 7.5rem;
+  }
+ 
+}
   
+/* Media query for small screens (e.g., mobile devices) */
+@media screen and (max-width: 576px) {
+  .containerl {
+    width: 80%;
+    left: 0;
+  }
+  .login-inp {
+    font-size: 24px;
+  }
+  .login-btn {
+    left: 10rem;
+  } 
+  .pl2{
+    left: 10rem;
+  }
+  .pl1{
+    left: 7.5rem;
+  }
 }
