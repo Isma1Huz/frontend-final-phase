@@ -1,24 +1,24 @@
 .img-cl {
   width: 65%;
   height: 85vh;
- position: relative;
+  position: relative;
   z-index: 3;
-  top: 5rem;
+  top: 2rem;
   object-fit: cover;
 }
 .containerl {
   margin: 0 auto;
   padding: 20px;
-  border-radius: 8px; 
-  border-color: #509E2F;
+  border-radius: 8px;
+  border-color: #509e2f;
   position: relative;
   width: 30%;
   height: 100%;
   left: -3rem;
   top: 8rem;
 }
- 
- .hl {
+
+.hl {
   text-align: center;
   font-size: 2rem;
 }
@@ -32,7 +32,7 @@
   margin-bottom: 19px;
   margin-left: 10px;
   padding: 9px;
-  border: 2px solid #509E2F;
+  border: 2px solid #509e2f;
   border-radius: 10px;
   position: relative;
   left: 20px;
@@ -40,9 +40,9 @@
   padding-left: 1rem;
 }
 
- .login-btn {
+.login-btn {
   padding: 10px;
-  background-color: #509E2F;
+  background-color: #509e2f;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -50,25 +50,25 @@
   margin-bottom: 1rem;
   cursor: pointer;
   width: 100px;
- position: relative;
+  position: relative;
   left: 10rem;
   top: 40px;
 }
 
 .login-btn:hover {
-  background-color: #509E2F;
+  background-color: #509e2f;
 }
 
 .pl3 {
-position: relative;
-bottom: 50px;
+  position: relative;
+  bottom: 50px;
   color: blue;
-  left: 2rem;  
+  left: 2rem;
   font-size: 80%;
   cursor: pointer;
 }
 
-.pl1{
+.pl1 {
   position: relative;
   left: 150px;
 }
@@ -83,21 +83,21 @@ bottom: 50px;
 
 .form-cl {
   display: flex;
-  height: 80vh;
+  height: 100vh;
   width: 100%;
 }
 @media screen and (max-width: 1200px) {
   .login-btn {
     left: 6rem;
-  } 
-  .pl2{
+  }
+  .pl2 {
     left: 6rem;
   }
-  .pl1{
+  .pl1 {
     left: 4rem;
   }
 }
-  
+
 /* Media query for medium-sized screens (e.g., tablets) */
 @media screen and (max-width: 768px) {
   .containerl {
@@ -109,16 +109,15 @@ bottom: 50px;
   }
   .login-btn {
     left: 10rem;
-  } 
-  .pl2{
+  }
+  .pl2 {
     left: 10rem;
   }
-  .pl1{
+  .pl1 {
     left: 7.5rem;
   }
- 
 }
-  
+
 /* Media query for small screens (e.g., mobile devices) */
 @media screen and (max-width: 576px) {
   .containerl {
@@ -130,11 +129,11 @@ bottom: 50px;
   }
   .login-btn {
     left: 10rem;
-  } 
-  .pl2{
+  }
+  .pl2 {
     left: 10rem;
   }
-  .pl1{
+  .pl1 {
     left: 7.5rem;
   }
 }

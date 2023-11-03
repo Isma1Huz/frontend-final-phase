@@ -1,12 +1,10 @@
-import './App.css';
-import RecipeRoom from './RecipeRoom';
-
+import "./App.css";
+import RecipeRoom from "./RecipeRoom";
 
 function App() {
   return (
     <div className="App">
       <RecipeRoom />
-  
     </div>
   );
 }

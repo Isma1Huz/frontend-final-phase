@@ -1,66 +1,92 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  .ingredients {
-    padding: 0 2rem ;
-  }
-  .ingredients ul li, .ingredients ol li {
-    line-height: 2.5rem;
-  }
-  .ingredients h2, .rating{
-    margin-left: 2rem;
-  }
-  .search {
-    margin: 0 4rem 0 4rem !important;
-    width: 30%;
-    display: flex;
-  }
-  .search input {
-    border-radius: 10rem  ;
-    padding-left: 1rem;
-  }
-  .search button {
-    border-radius: 50%;
-    width: 2.5rem;
-    height: 2rem;
-    padding: 1px;
-    position: relative;
-    left: -2.6rem;
-    top: 0.2rem;
-  }
-  .banner {
-    text-align: center;
-    width: 100%;
-    height: 10rem;
-    flex-shrink: 0;
-    background-image: url(../../assets/banner.png);
-    position: relative;
-    top: -1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .banner h1 {
-    color: white;
-  }
-  .rates {
-    list-style: none;
-    display: flex;
-  }
-  .rates li {
-    margin:0  0.1rem;
-  }
-  .profile {
-    width: 2rem;
-    height: 2rem;
-    margin-right: 1rem;
-  }
-  .share {
-    margin-left: 2rem;
-    margin-top: 1rem;
-  }
-  .notification {
-    margin-right: 7rem;
-  }
+.ingredients {
+  padding: 0 2rem;
+}
+.ingredients ul li,
+.ingredients ol li {
+  line-height: 2.5rem;
+}
+.ingredients h2,
+.rating {
+  margin-left: 2rem;
+}
+.search {
+  margin: 0 4rem 0 4rem !important;
+  width: 30%;
+  display: flex;
+}
+.search input {
+  border-radius: 10rem;
+  padding-left: 1rem;
+}
+.search button {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2rem;
+  padding: 1px;
+  position: relative;
+  left: -2.6rem;
+  top: 0.2rem;
+}
+.navigation {
+  background-color: #d9d9d9;
+  position: relative;
+  top: -0.6rem;
+}
+.navigation ul {
+  display: flex;
+  justify-content: space-between;
+  width: 40% !important;
+}
+.navigation ul li a {
+  color: #84bd00 !important;
+}
+.banner {
+  text-align: center;
+  width: 100%;
+  height: 10rem;
+  flex-shrink: 0;
+  background-image: url(../../assets/banner.png);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  color: white;
+}
+.rates {
+  list-style: none;
+  display: flex;
+}
+.rates li {
+  margin: 0 0.1rem;
+}
+.profile {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+.share {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+.notification {
+  margin-right: 7rem;
+}
+/* .footer {
+  text-align: center;
+  width: 100%;
+  height: 15rem;
+  background-image: url(../../assets/banner.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  top: 1rem;
+  position: relative;
+}
+.footer ul li a {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+} */

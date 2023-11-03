@@ -1,40 +1,86 @@
+import React, { useState } from "react";
+import "./Header.css";
+import { Link } from "react-router-dom";
 
-// import React from 'react'
-// import logo from "../assets/logo.png"
-// import profile from '../assets/profile.png';
-// import notification from '../assets/notification.png';
-// import './Header.css'
+const Header = () => {
+  const [isDisplayed, setIsDisplayed] = useState(false);
+  const [userPopUpOpen, setUserPopUpOpen] = useState(false);
 
-// function Header() {
-//   return (
-//     <div>
-//         <nav class="navbar navbar-expand-lg">
-//             <div class="container-fluid navigation" >
-//                 <a class="navbar-brand" href="#">
-//                     <img src={logo} alt='logo' class="d-inline-block align-text-top"/>
-//                 </a>
-//                 <form class="d-flex" role="search" className='search'>
-//                     <input class="form-control me-2" type="search" placeholder="Search by Name" aria-label="Search"/>
-//                     <button class="btn btn-outline-success" type="submit">i</button>
-//                 </form>
-//                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-//                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-//                     <li class="nav-item">
-//                     <a class="nav-link active" aria-current="page" href="#">Home</a>
-//                     </li>
-//                     <li class="nav-item">
-//                     <a class="nav-link" href="#Recipes">Recipes</a>
-//                     </li>
-//                 </ul>
-//                 <img src={notification} className='profile notification' alt='Profile' />
-//                 <img src={profile} className='profile' alt='Profile' />
+  const toggleMenu = () => {
+    setIsDisplayed((isDisplayed) => !isDisplayed);
+  };
+  const toggleUserPopUp = () => {
+    setUserPopUpOpen((userPopUpOpen) => !userPopUpOpen);
+  };
 
-               
-//                 </div>
-//             </div>
-//         </nav> 
-//     </div>
-//   )
-// }
+  const headerPaneClasses = isDisplayed
+    ? "header__pane header__pane--show"
+    : "header__pane";
+  const userPopUpClasses = userPopUpOpen
+    ? "user-profile-popup user-profile-popup--show"
+    : "user-profile-popup";
+  return (
+    <header className="header">
+      <div className="header__icon">
+        <i className="fa fa-bars" aria-hidden="true" onClick={toggleMenu}></i>
+        <img
+          src="https://media.istockphoto.com/id/1476170969/photo/portrait-of-young-man-ready-for-job-business-concept.webp?b=1&s=170667a&w=0&k=20&c=FycdXoKn5StpYCKJ7PdkyJo9G5wfNgmSLBWk3dI35Zw="
+          alt="user profile"
+        />
+      </div>
+      <div className={headerPaneClasses}>
+        <div className="header__left-section">
+          <span className="logo">
+            Re<span>st</span>Room
+          </span>
+        </div>
 
-// export default Header;
+        <div className="header__right-section">
+          <nav className="header__nav">
+            <Link to="/" className="nav-recipe">
+              Recipes
+            </Link>
+            <div className="header__auth">
+              <Link to="login" className="header__link">
+                Login
+              </Link>
+              <Link to="register" className="header__link">
+                Register
+              </Link>
+            </div>
+            <div className="header__user">
+              <div className="header__notification">
+                <i className="fa fa-bell-o" aria-hidden="true"></i>
+              </div>
+              <div className="header__user-profile">
+                <img
+                  onClick={toggleUserPopUp}
+                  className="header__user-profile-img"
+                  src="https://media.istockphoto.com/id/1476170969/photo/portrait-of-young-man-ready-for-job-business-concept.webp?b=1&s=170667a&w=0&k=20&c=FycdXoKn5StpYCKJ7PdkyJo9G5wfNgmSLBWk3dI35Zw="
+                  alt="user profile"
+                />
+                <div
+                  className={userPopUpClasses}
+                  onMouseLeave={toggleUserPopUp}
+                >
+                  <img
+                    className="header__user-profile-img"
+                    src="https://media.istockphoto.com/id/1476170969/photo/portrait-of-young-man-ready-for-job-business-concept.webp?b=1&s=170667a&w=0&k=20&c=FycdXoKn5StpYCKJ7PdkyJo9G5wfNgmSLBWk3dI35Zw="
+                    alt="user profile"
+                  />
+                  <h2 className="username-profile">John Maluki</h2>
+                  <Link to="profile" className="edit-profile">
+                    Edit Profile
+                  </Link>
+                  <button className="logout">Logout</button>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
