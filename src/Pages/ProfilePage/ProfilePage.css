@@ -1,7 +1,7 @@
 .profileContainer {
     display: flex;
     justify-content: space-between;
-    padding:  0 1rem;
+  padding:  5rem 1rem 0 1rem;
     width: 100%;
 
 }
@@ -51,7 +51,7 @@
     width: 78.59px;
     height: 34px;
 }
-.groups {
+.groupsbtn {
     display: flex;
     justify-content: space-between;
     padding:  0 1rem;
@@ -68,4 +68,84 @@
 .svg {
     background-image: url(../../assets/banner.png);
 
+}
+@media only screen and (max-width: 1200px) {
+  .profileContainer {
+    flex-direction: column;
+  }
+
+  .first-column {
+    width: 100%;
+  }
+  .second-column, .third-column {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .groupsbtn {
+    flex-direction: column;
+    position: relative;
+  }
+  .groupsitem {
+    width: 100%;
+  }
+  .fourth-column {
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    position: relative;
+    bottom: -25rem;
+    z-index: 1;
+  }
+  .invitelist {
+    margin-bottom: 4rem ;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .profileContainer {
+    flex-direction: column;
+    justify-content: start;
+    padding: 2rem;
+
+
+  }
+
+  .first-column {
+    width: 100%;
+  }
+  .second-column, .third-column {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .groupsbtn {
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+  .groups  ul li{
+    width: 100%;
+    padding-right: 1rem;
+  }
+  .groupsitem {
+    width: 100%;
+  }
+  .fourth-column {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    bottom: -35rem;
+    z-index: 1;
+    padding: 0;
+    margin: 0;
+    
+  }
+  .fourth-column  button{
+    margin-left: 0.5rem ;
+
+  }
+  .invitelist {
+    margin-bottom: 4rem ;
+  }
 }

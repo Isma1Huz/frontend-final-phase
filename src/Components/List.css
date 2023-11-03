@@ -7,10 +7,9 @@
 }
 
 .food-card {
-  width: calc(33.33% - 5px); /* Maximum of three cards per row with spacing */
+  width: calc(20.33% - 5px); /* Maximum of three cards per row with spacing */
   margin: 5px;
   padding: 10px;
-  border: 1px solid #ccc;
   text-align: center;
 }
 
