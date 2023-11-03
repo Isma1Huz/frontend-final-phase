@@ -42,8 +42,7 @@ function RecipePage() {
   ];
 
   return (
-    <div className="App">
-      <Header />
+    <>
       <div className="banner">
         <h1>Greek Faro Salad</h1>
       </div>
@@ -115,7 +114,7 @@ function RecipePage() {
           </a>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

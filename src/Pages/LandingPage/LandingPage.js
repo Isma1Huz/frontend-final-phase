@@ -1,35 +1,24 @@
-import React from 'react'
-import Header from './Components/Header';
-import Filter from './Components/Filter';
-import Footer from './Components/Footer';
-import List from './Components/List';
+import React from "react";
+import "./LandinPage.css";
+
 function LandingPage() {
-
   return (
-    <div>
-      <Header />
-
-      <div className="image-container">
-        <img src="image1.png" alt="image" className="image-container" />
-        <div className="image-text">
-          Delicious
-          <br />
-          Recipes
-        </div>
-
+    <div className="landing-page">
+      <div className="landing-page-banner">
+        <p className="banner-title">Delicious Recipes</p>
       </div>
-
-      <Filter />
-
-      <List />
-
-      <Footer />
-
-
-
-
+      <div className="recipe-search">
+        <input
+          className="search-input"
+          type="text"
+          placeholder="Search Recipe..."
+        />
+        <div className="search-recipe-icon">
+          <i className="fa fa-search" aria-hidden="true"></i>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default LandingPage
+export default LandingPage;

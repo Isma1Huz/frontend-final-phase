@@ -1,25 +1,78 @@
-/* Header Container */
-.header-container {
-    display: flex;
-    align-items: center;
+.landing-page-banner {
+  position: relative;
+  width: 100%;
+  height: 129px;
+  background-image: url(../../assets/carosel-img-front-page.jpg);
+  background-color: gray;
+  background-position: center;
+  margin-bottom: 20px;
 }
 
-/* Logo */
-.logo img {
-    height: 50px; /* Adjust the height as needed */
-    margin-right: 10px;
+.banner-title {
+  position: absolute;
+  left: 50px;
+  top: 50px;
+  color: #fefffc;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1px; /* 6.667% */
+  letter-spacing: 5px;
 }
 
-/* Search Bar */
-.search-bar input {
-    border: 1px solid #ccc;
-    border-radius: 20px; /* Rounded edges */
-    padding: 10px;
-    width: 200px; /* Adjust the width as needed */
+.recipe-search {
+  margin: 20px auto;
+  padding: 10px;
+  position: relative;
+  max-width: 350px;
 }
 
-/* Header Text */
-h1 {
-    font-size: 1.5rem; /* Adjust the font size as needed */
-    /* Add other text styles as needed */
+.search-recipe-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  background-color: #d9d9d9;
+  border: 0.3px solid #6b6969;
+  position: absolute;
+  right: 5px;
+  bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0px 20px 0px 20px;
+  margin: 0 5px;
+  height: 35px;
+  border-radius: 35px;
+  border: 0.2px solid grey;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.search-input:focus {
+  border: none;
+  outline: 1px solid green;
+}
+
+@media (min-width: 576px) {
+  .recipe-search {
+    position: absolute;
+    top: -10px;
+    left: 100px;
+  }
+
+  .search-input {
+    border: none;
+  }
+
+  .search-input:focus {
+    outline: none;
+  }
 }

@@ -22,6 +22,10 @@ const Header = () => {
     <header className="header">
       <div className="header__icon">
         <i className="fa fa-bars" aria-hidden="true" onClick={toggleMenu}></i>
+        <img
+          src="https://media.istockphoto.com/id/1476170969/photo/portrait-of-young-man-ready-for-job-business-concept.webp?b=1&s=170667a&w=0&k=20&c=FycdXoKn5StpYCKJ7PdkyJo9G5wfNgmSLBWk3dI35Zw="
+          alt="user profile"
+        />
       </div>
       <div className={headerPaneClasses}>
         <div className="header__left-section">
