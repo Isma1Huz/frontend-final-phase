@@ -57,6 +57,17 @@
   line-height: 24px;
 }
 
+.nav-recipe {
+  display: inline-block;
+  color: #509e2f;
+  margin-bottom: 50px;
+  cursor: pointer;
+  font-family: Roboto;
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration: none;
+}
+
 .header__auth {
   display: flex;
   flex-direction: column;
@@ -78,6 +89,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  text-decoration: none;
 }
 .header__user {
   display: flex;
@@ -188,7 +200,7 @@
     gap: 20px;
   }
 
-  .header__nav > span {
+  .nav-recipe {
     margin-right: 50px;
     margin-bottom: 0;
     font-size: 20px;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isDisplayed, setIsDisplayed] = useState(false);
@@ -36,10 +37,16 @@ const Header = () => {
 
         <div className="header__right-section">
           <nav className="header__nav">
-            <span className="nav-recipe">Recipes</span>
+            <Link to="/" className="nav-recipe">
+              Recipes
+            </Link>
             <div className="header__auth">
-              <span className="header__link">Login</span>
-              <span className="header__link">Register</span>
+              <Link to="login" className="header__link">
+                Login
+              </Link>
+              <Link to="register" className="header__link">
+                Register
+              </Link>
             </div>
             <div className="header__user">
               <div className="header__notification">
@@ -62,7 +69,9 @@ const Header = () => {
                     alt="user profile"
                   />
                   <h2 className="username-profile">John Maluki</h2>
-                  <span className="edit-profile">Edit Profile</span>
+                  <Link to="profile" className="edit-profile">
+                    Edit Profile
+                  </Link>
                   <button className="logout">Logout</button>
                 </div>
               </div>
