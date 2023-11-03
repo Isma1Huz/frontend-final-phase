@@ -6,12 +6,14 @@
   }
   
   .containerg {
-    background-color: #fff;
     border-radius: 8px;
-    padding: 20px;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-    width: 800px;
-    height: 550px;
+  padding: auto;
+  width: 100%;
+  display: block;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: -2rem;
     position: relative;
     bottom: 140px;
   }
@@ -19,44 +21,40 @@
  .group {
     text-align: center;
     margin-bottom: 20px;
-    font-size: 3.5rem;
+  font-size: 1.9rem;
   }
   
-  .grouprecipe-input{
-    width: calc(100% - 20px);
-    padding: 27px;
-    margin-bottom: 20px;
-    border: 2px solid #5F8E00;
+.grouprecipe-input {
+  width: 40%;
+  padding: 12px;
+  margin-bottom: 1rem !important;
+  border: 2px solid #509E2F;
     border-radius: 20px;
     box-sizing: border-box;
+  margin-left: 22rem !important;
+  left: auto;
   }
   
  .group-button {
-    width: 250px;
-    padding: 15px;
-    background-color: #84BD00;
-    border: none;
-    border-radius: 13px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+  background-color: #509E2F;
+  width: 140.82px;
+  height: 34px;
     position: relative;
-    left: 500px;
+  border-radius: 10px;
+  color: white;
+  left: 45%;
+  margin-top: 20px;
   }
-  .group-button1{
-    width: 250px;
-    padding: 15px;
-    background-color: #84BD00;
-    border: none;
-    border-radius: 13px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
+
+.group-button1 {
+  background-color: #5F8E00;
+  width: 140.82px;
+  height: 34px;
     position: relative;
-    top: 47px;
-  
-   
-  
+  border-radius: 10px;
+  color: white;
+  position: relative;
+  left: 27.5%;
   }
   
   button:hover {
@@ -71,3 +69,32 @@
     background-color: #ccc;
   }
   
+/* Media query for medium-sized screens */
+@media screen and (max-width: 768px) {
+  .grouprecipe-input {
+    width: 60%;
+  }
+  .grouprecipe-input {
+    width: 40%;
+    padding: 12px;
+    margin-bottom: 1rem !important;
+    border: 2px solid #509E2F;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin:0.7rem 0 1rem 2.5rem !important;
+    left: auto;
+  }
+}
+
+/* Media query for small screens  */
+@media screen and (max-width: 576px) {
+  .grouprecipe-input {
+    width: 80%;
+  }
+  .group-button1{
+    left: 10%;
+  }
+  .group-button{
+    left: 40%;
+  }
+}

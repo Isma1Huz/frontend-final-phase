@@ -1,12 +1,10 @@
 import './RecipePage.css';
-import Header from '../../Components/Header';
 import star from '../../assets/star.png';
 import profile from '../../assets/profile.png';
 import facebook from '../../assets/facebook.png';
 import twitter from '../../assets/twitter.png';
 import youtube from '../../assets/youtube.png';
 import pintrest from '../../assets/pintrest.png';
-import Footer from '../../Components/Footer';
 
 function RecipePage() {
   const ingredients = [
@@ -44,7 +42,6 @@ function RecipePage() {
 
   return (
     <div className="App">
-      <Header/>
       <div className='banner'>
         <h1>Greek Faro Salad</h1>
       </div>
@@ -92,7 +89,6 @@ function RecipePage() {
           <a href='https://www.youtube.com/'><img src={youtube}   alt='Youtube'/></a>
         </div>
       </div>
-      <Footer/>
 
     </div>
   );

@@ -1,183 +1,92 @@
 
-.body{
-    position: fixed;
-    
-  }
-  .img-c{
-   width: 1100px;
-   height: 900px;
+.img-c {
+  width: 70%;
+  height: 90vh;
    position: relative;
-   left: 1948px;
-   .body{
-       position: fixed;
-       
+  z-index: 3;
+  top: 4rem;
+  bottom: -10rem;
+  object-fit: cover;
      }
-     .img-c{
-      width: 1100px;
-      height: 900px;
-      position: relative;
-      left: 1948px;
-      top: 138px;
     
-       
-      
-     }
      .containerR {
-       
        margin: 0 auto;
        padding: 20px;
-       background-color: white;
        border-radius: 8px; 
-       border-color: #84BD00;
-       width: 800px;
-       height: 700px;
-       margin-right: 1900px;
+  border-color: #509E2F;
        position: relative;
-       left: 150px;
-   
-       
-       
-     
+  width: 28%;
+  height: 100%;
+  top: 5rem;
      }
       
      .h2reg {
        text-align: center;
-       font-size: 4rem;
+  font-size: 2rem;
      }
      
-     .my-rform{
+.my-rform {
        display: flex;
        flex-direction: column;
-      
      }
-     
      
       .register-inp {
        margin-bottom: 19px;
-       margin-left: 3px;
-       padding: 8px;
-       border: 2px solid #84BD00;
+  margin-left: 10px;
+  padding: 7px;
+  border: 2px solid #509E2F;
        border-radius: 10px;
-       font-size: 30px;
        position: relative;
        left: 20px;
-     
-       
-       
+  width: 100%;
+  padding-left: 1rem;
      }
      
-     .register-btn{
+.register-btn {
        padding: 10px;
-       background-color: #84BD00;
+  background-color: #509E2F;
        color: #fff;
        border: none;
        border-radius: 8px;
        font-size: 20px;
+  margin-bottom: 1rem;
        cursor: pointer;
-       width: 150px;
+  width: 100px;
        position: relative;
-       left: 150px;
-       top: 40px;
+  left: 8rem;
      }
      
      .register-btn:hover {
-       background-color: #465c14;
-     }
-   
-   ::placeholder{
-   font-size: 1rem;
+  background-color: #509E2F;
    }
      
      .form-c {
        display: flex;
-       justify-content: center;
-       align-items: center;
        height: 80vh;
-       position: relative;
-       right: 400px;
-       
-       
+  width: 100%;
      }
      
-   top: 138px;
- 
-    
-   
+/* Media query for medium-sized screens */
+@media screen and (max-width: 1200px) {
+  .register-btn {
+    left: 6rem;
   }
   .containerR {
-    
-    margin: 0 auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px; 
-    border-color: #84BD00;
-    width: 800px;
-    height: 700px;
-    margin-right: 1900px;
-    position: relative;
-    left: 150px;
-
-    
-    
-  
+    margin-right: 2rem;
   }
-   
-  .h2reg {
-    text-align: center;
-    font-size: 4rem;
   }
   
-  form {
-    display: flex;
-    flex-direction: column;
-   
+/* Media query for small screens*/
+@media screen and (max-width: 768px) {
+  .containerR {
+    width: 70%;
+    left: -1rem;
   }
-  
-  
-   .register-inp {
-    margin-bottom: 19px;
-    margin-left: 3px;
-    padding: 8px;
-    border: 2px solid #84BD00;
-    border-radius: 10px;
-    font-size: 30px;
-    position: relative;
-    left: 20px;
-  
-    
-    
+  .img-c {
+    display: none;
   }
-  
-  .register-btn{
-    padding: 10px;
-    background-color: #84BD00;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-size: 20px;
-    cursor: pointer;
-    width: 150px;
-    position: relative;
-    left: 150px;
-    top: 40px;
-  }
-  
-  button:hover {
-    background-color: #84BD00;
-  }
-
-::placeholder{
-font-size: 1rem;
+  .register-btn {
+    left: 6rem;
 }
-  
-  .form-c {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    position: relative;
-    right: 400px;
-    
-    
   }
   
