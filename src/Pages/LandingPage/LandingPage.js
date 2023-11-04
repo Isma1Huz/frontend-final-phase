@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { addDays } from "date-fns";
 import "./LandinPage.css";
+import "react-date-range/dist/styles.css"; // main css file
+import "react-date-range/dist/theme/default.css"; // theme css file
+
 import Filter from "../../Components/Filter";
 import List from "../../Components/List";
+import RecipeCard from "../../Components/RecipeCard";
+import { DateRangePicker } from "react-date-range";
 function LandingPage() {
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [showDatePopUp, setShowDatePopUp] = useState(false);
+  const [range, setRange] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 7),
+      key: "selection",
+    },
+  ]);
+
+  const toggleShowDatePicker = () => {
+    setShowDatePopUp(!showDatePopUp);
+  };
+
+  const datePickerClass = showDatePopUp
+    ? "filter-date-pop-up filter-date-pop-up--show"
+    : "filter-date-pop-up";
+
   return (
     <div className="landing-page">
       <div className="landing-page-banner">
@@ -18,32 +42,67 @@ function LandingPage() {
           <i className="fa fa-search" aria-hidden="true"></i>
         </div>
       </div>
-      <section className="all-recipes">
-        <div className="recipe-card">
-          <img
-            className="recipe-photo"
-            src="https://www.kannammacooks.com/wp-content/uploads/2014/11/South-indian-style-chettinad-urlai-roast-potato-roast-recipe-1-3.jpg"
-            alt="recipe"
-          />
-          <p>Egg White Bites</p>
-          <div className="recipe-card__footer">
-            <div className="recipe-time">
-              <span>10 minutes</span>
-            </div>
-            <div className="icon-number">
-              <i class="fa fa-comments" aria-hidden="true"></i>
-              <span>100</span>
-            </div>
-            <div className="icon-number">
-              <i class="fa fa-heart" aria-hidden="true"></i>
-              <span>80</span>
-            </div>
-            <div className="icon-number">
-              <i class="fa fa-heart" aria-hidden="true"></i>
-              <span>80</span>
-            </div>
+      <section className="recipe-filter">
+        <div className="recipe-filter-ingridients">
+          <h6>Ingredients</h6>
+          <select className="recipe-select">
+            <option value="all">all</option>
+            <option value="ugali">ugali</option>
+            <option value="ugali">ugali</option>
+            <option value="ugali">ugali</option>
+          </select>
+        </div>
+        <div className="recipe-filter-country">
+          <h6>Country</h6>
+          <select className="recipe-select">
+            <option value="all">all</option>
+            <option value="kenya">Kenya</option>
+            <option value="uganda">Uganda</option>
+            <option value="rwanda">Rwanda</option>
+          </select>
+        </div>
+        <div className="recipe-filter-date">
+          <div className="date-title">
+            Creation Date <b>---to---</b>{" "}
+            <i
+              className="fa fa-calendar fa-1x"
+              aria-hidden="true"
+              onClick={toggleShowDatePicker}
+            ></i>
+            <i className="fa fa-repeat" aria-hidden="true"></i>
+          </div>
+          <div className={datePickerClass}>
+            <DateRangePicker
+              onChange={(item) => setRange([item.selection])}
+              showSelectionPreview={true}
+              moveRangeOnFirstSelection={false}
+              months={2}
+              ranges={range}
+              direction="horizontal"
+            />
           </div>
         </div>
+        <div className="recipe-filter-rating">
+          <h6>Ratings</h6>
+          <select className="recipe-select">
+            <option value="all">all</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </section>
+      <section className="all-recipes">
+        {/* All recipe cards goes here */}
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
+        <RecipeCard />
       </section>
     </div>
   );

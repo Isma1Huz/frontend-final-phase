@@ -62,19 +62,115 @@
 }
 
 .all-recipes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   padding: 20px;
+  margin: 20px;
 }
 
 .recipe-card {
+  font-family: Roboto;
   width: 300px;
-  height: 200px;
+  height: max-content;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .recipe-photo {
   display: block;
-  width: 200px;
-  height: 150px;
+  width: 100%;
+  height: 200px;
   border-radius: 5px;
+  background-position: center;
+  background-origin: content-box;
+}
+
+.card-recipe-name {
+  color: #000;
+  font-family: Roboto;
+  font-weight: bold;
+  opacity: 0.7;
+  font-size: 16px;
+  margin: 10px 5px;
+  text-align: center;
+}
+
+/* .recipe-time {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.recipe-time > span {
+  display: block;
+  width: 40%;
+  margin: 0 auto;
+} */
+
+.recipe-card__footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 3px;
+}
+
+.icon-number i {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.rate-color {
+  color: green;
+}
+
+.recipe-filter {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  border-bottom: 0.1px solid #8080805d;
+}
+
+.filter-date-pop-up {
+  display: none;
+  position: absolute;
+  left: 20%;
+  top: 50px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  z-index: 100;
+}
+
+.filter-date-pop-up--show {
+  display: block;
+}
+
+.recipe-filter-ingridients,
+.recipe-filter-country,
+.recipe-filter-rating {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  align-content: center;
+}
+
+.recipe-filter-date .date-title {
+  display: flex;
+  gap: 20px;
+}
+
+.date-title i {
+  cursor: pointer;
+}
+
+.recipe-select {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 @media (min-width: 576px) {
@@ -90,5 +186,10 @@
 
   .search-input:focus {
     outline: none;
+  }
+
+  .all-recipes {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
