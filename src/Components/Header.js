@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../contexts/AuthContext";
 
 const Header = () => {
   const [isDisplayed, setIsDisplayed] = useState(false);
   const [userPopUpOpen, setUserPopUpOpen] = useState(false);
+  const authUser = useContext(AuthContext).authUser;
+  const logout = useContext(AuthContext).logout;
 
   const toggleMenu = () => {
     setIsDisplayed((isDisplayed) => !isDisplayed);
@@ -19,14 +22,18 @@ const Header = () => {
   const userPopUpClasses = userPopUpOpen
     ? "user-profile-popup user-profile-popup--show"
     : "user-profile-popup";
+
+  const handleLogout = () => {
+    toggleUserPopUp();
+    logout();
+  };
   return (
     <header className="header">
       <div className="header__icon">
         <i className="fa fa-bars" aria-hidden="true" onClick={toggleMenu}></i>
-        <img
-          src="https://media.istockphoto.com/id/1476170969/photo/portrait-of-young-man-ready-for-job-business-concept.webp?b=1&s=170667a&w=0&k=20&c=FycdXoKn5StpYCKJ7PdkyJo9G5wfNgmSLBWk3dI35Zw="
-          alt="user profile"
-        />
+        {authUser ? (
+          <img src={authUser?.profile_photo} alt="user profile" />
+        ) : null}
       </div>
       <div className={headerPaneClasses}>
         <div className="header__left-section">
@@ -40,42 +47,47 @@ const Header = () => {
             <Link to="/" className="nav-recipe">
               Recipes
             </Link>
-            <div className="header__auth">
-              <Link to="login" className="header__link">
-                Login
-              </Link>
-              <Link to="register" className="header__link">
-                Register
-              </Link>
-            </div>
-            <div className="header__user">
-              <div className="header__notification">
-                <i className="fa fa-bell-o" aria-hidden="true"></i>
+            {!authUser ? (
+              <div className="header__auth">
+                <Link to="login" className="header__link">
+                  Login
+                </Link>
+                <Link to="register" className="header__link">
+                  Register
+                </Link>
               </div>
-              <div className="header__user-profile">
-                <img
-                  onClick={toggleUserPopUp}
-                  className="header__user-profile-img"
-                  src="https://media.istockphoto.com/id/1476170969/photo/portrait-of-young-man-ready-for-job-business-concept.webp?b=1&s=170667a&w=0&k=20&c=FycdXoKn5StpYCKJ7PdkyJo9G5wfNgmSLBWk3dI35Zw="
-                  alt="user profile"
-                />
-                <div
-                  className={userPopUpClasses}
-                  onMouseLeave={toggleUserPopUp}
-                >
+            ) : (
+              <div className="header__user">
+                <div className="header__notification">
+                  <i className="fa fa-bell-o" aria-hidden="true"></i>
+                </div>
+                <div className="header__user-profile">
                   <img
+                    onClick={toggleUserPopUp}
                     className="header__user-profile-img"
-                    src="https://media.istockphoto.com/id/1476170969/photo/portrait-of-young-man-ready-for-job-business-concept.webp?b=1&s=170667a&w=0&k=20&c=FycdXoKn5StpYCKJ7PdkyJo9G5wfNgmSLBWk3dI35Zw="
+                    src={authUser?.profile_photo}
                     alt="user profile"
                   />
-                  <h2 className="username-profile">John Maluki</h2>
-                  <Link to="profile" className="edit-profile">
-                    Edit Profile
-                  </Link>
-                  <button className="logout">Logout</button>
+                  <div
+                    className={userPopUpClasses}
+                    onMouseLeave={toggleUserPopUp}
+                  >
+                    <img
+                      className="header__user-profile-img"
+                      src={authUser?.profile_photo}
+                      alt="user profile"
+                    />
+                    <h2 className="username-profile">{`${authUser.first_name} ${authUser.last_name}`}</h2>
+                    <Link to="profile" className="edit-profile">
+                      Edit Profile
+                    </Link>
+                    <button className="logout" onClick={handleLogout}>
+                      Logout
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
           </nav>
         </div>
       </div>
