@@ -19,10 +19,12 @@ const Login = () => {
         if (resp.status === 200) {
           handleLogin(resp.data.access_token);
         } else {
+          formik.setSubmitting(false);
           alert_error("Username or Password is incorrect!!");
         }
       })
       .catch((error) => {
+        formik.setSubmitting(false);
         alert_error("Error doing the login. Try later");
       });
   };

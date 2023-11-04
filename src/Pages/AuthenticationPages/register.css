@@ -61,7 +61,7 @@
 
 .form-c {
   display: flex;
-  height: 100vh;
+  height: max-content;
   width: 100%;
 }
 
