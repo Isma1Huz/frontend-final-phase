@@ -1,27 +1,21 @@
 import React, { useContext, useState } from "react";
-import { addDays } from "date-fns";
-import "./LandinPage.css";
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
 
-import Filter from "../../Components/Filter";
-import List from "../../Components/List";
+import "./LandinPage.css";
 import RecipeCard from "../../Components/RecipeCard";
-import { DateRangePicker } from "react-date-range";
 import { RecipeContext } from "../../contexts/RecipeContext";
 import SearchRecipeInput from "../../Components/SearchRecipeInput";
 import { getLoadingDataSpinner } from "../../utils/functions";
+import RecipeFilter from "../../Components/RecipeFilter";
 function LandingPage() {
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [showDatePopUp, setShowDatePopUp] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const [range, setRange] = useState([
-    {
-      startDate: new Date(),
-      endDate: addDays(new Date(), 7),
-      key: "selection",
-    },
-  ]);
+  const [recipeFilterDic, setRecipeFilterDic] = useState({
+    ingredient: "all",
+    country: "all",
+    number_of_people_served: "",
+    created_at: [],
+    rating: "0",
+  });
+
   const recipeContext = useContext(RecipeContext);
   const recipeFilteredWithSerchText = recipeContext.recipes.filter((recipe) => {
     const composed_string =
@@ -32,7 +26,45 @@ function LandingPage() {
       return composed_string.includes(searchText.toLowerCase());
     }
   });
-  const recipeCardList = recipeFilteredWithSerchText.map((recipe) => (
+  const filteredRecipes = recipeFilteredWithSerchText.filter((recipe) => {
+    if (
+      recipeFilterDic.ingredient === "all" &&
+      recipeFilterDic.country === "all" &&
+      recipeFilterDic.number_of_people_served === "" &&
+      recipeFilterDic.created_at.length === 0 &&
+      recipeFilterDic.rating === "0"
+    ) {
+      return true;
+    } else {
+      const recipeCreationDate = new Date(recipe.created_at);
+      const startDate = new Date(recipeFilterDic.created_at[0]);
+      const endDate = new Date(recipeFilterDic.created_at[1]);
+
+      let isDateCorrect = false;
+      if (startDate.toDateString() === endDate.toDateString()) {
+        isDateCorrect =
+          startDate.toDateString() === recipeCreationDate.toDateString();
+      } else {
+        isDateCorrect =
+          recipeCreationDate > startDate && recipeCreationDate < endDate;
+      }
+
+      return (
+        recipe.ingredients.toLowerCase().includes(recipeFilterDic.ingredient) ||
+        recipe.country.toLowerCase() ===
+          recipeFilterDic.country.toLowerCase() ||
+        recipe.number_of_people_served ===
+          parseInt(recipeFilterDic.number_of_people_served) ||
+        recipe.rating === parseInt(recipeFilterDic.rating) ||
+        isDateCorrect
+      );
+    }
+  });
+
+  const getFilteredRecipes = (recipes) => {
+    const recipesFilteredBy = recipes.filter((recipe) => {});
+  };
+  const recipeCardList = filteredRecipes.map((recipe) => (
     <RecipeCard
       key={recipe.id}
       name={recipe.name}
@@ -42,16 +74,11 @@ function LandingPage() {
       time_in_minutes={recipe.time_in_minutes}
     />
   ));
-  const toggleShowDatePicker = () => {
-    setShowDatePopUp(!showDatePopUp);
-  };
 
-  const datePickerClass = showDatePopUp
-    ? "filter-date-pop-up filter-date-pop-up--show"
-    : "filter-date-pop-up";
   const handleRecipeSearch = (search_text) => {
     setSearchText(search_text);
   };
+
   return (
     <div className="landing-page">
       <div className="landing-page-banner">
@@ -63,58 +90,8 @@ function LandingPage() {
           <i className="fa fa-search" aria-hidden="true"></i>
         </div>
       </div>
-      <section className="recipe-filter">
-        <div className="recipe-filter-ingridients">
-          <h6>Ingredients</h6>
-          <select className="recipe-select">
-            <option value="all">all</option>
-            <option value="ugali">ugali</option>
-            <option value="ugali">ugali</option>
-            <option value="ugali">ugali</option>
-          </select>
-        </div>
-        <div className="recipe-filter-country">
-          <h6>Country</h6>
-          <select className="recipe-select">
-            <option value="all">all</option>
-            <option value="kenya">Kenya</option>
-            <option value="uganda">Uganda</option>
-            <option value="rwanda">Rwanda</option>
-          </select>
-        </div>
-        <div className="recipe-filter-date">
-          <div className="date-title">
-            Creation Date <b>---to---</b>{" "}
-            <i
-              className="fa fa-calendar fa-1x"
-              aria-hidden="true"
-              onClick={toggleShowDatePicker}
-            ></i>
-            <i className="fa fa-repeat" aria-hidden="true"></i>
-          </div>
-          <div className={datePickerClass}>
-            <DateRangePicker
-              onChange={(item) => setRange([item.selection])}
-              showSelectionPreview={true}
-              moveRangeOnFirstSelection={false}
-              months={2}
-              ranges={range}
-              direction="horizontal"
-            />
-          </div>
-        </div>
-        <div className="recipe-filter-rating">
-          <h6>Ratings</h6>
-          <select className="recipe-select">
-            <option value="all">all</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-        </div>
-      </section>
+      {/* Filter section  */}
+      <RecipeFilter setRecipeFilterDic={setRecipeFilterDic} />
       <section className="all-recipes">
         {/* All recipe cards goes here */}
         {recipeContext.isLoading ? (

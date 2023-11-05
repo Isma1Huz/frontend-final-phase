@@ -11,11 +11,11 @@ function RecipeCard({ name, recipe_image, rating, time_in_minutes }) {
           <span>{`${time_in_minutes} minutes`}</span>
         </div>
         <div className="icon-number">
-          <i class="fa fa-comments" aria-hidden="true"></i>
+          <i className="fa fa-comments" aria-hidden="true"></i>
           <span>100</span>
         </div>
         <div className="icon-number">
-          <i class="fa fa-heart" aria-hidden="true"></i>
+          <i className="fa fa-heart" aria-hidden="true"></i>
           <span>80</span>
         </div>
         <div className="icon-number">
