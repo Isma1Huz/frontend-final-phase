@@ -1,18 +1,14 @@
 import React from "react";
 import Rating from "react-rating";
 
-function RecipeCard() {
+function RecipeCard({ name, recipe_image, rating, time_in_minutes }) {
   return (
     <div className="recipe-card">
-      <img
-        className="recipe-photo"
-        src="https://www.kannammacooks.com/wp-content/uploads/2014/11/South-indian-style-chettinad-urlai-roast-potato-roast-recipe-1-3.jpg"
-        alt="recipe"
-      />
-      <p className="card-recipe-name">Egg White Bites</p>
+      <img className="recipe-photo" src={recipe_image} alt="recipe" />
+      <p className="card-recipe-name">{name}</p>
       <div className="recipe-card__footer">
         <div className="recipe-time">
-          <span>10 minutes</span>
+          <span>{`${time_in_minutes} minutes`}</span>
         </div>
         <div className="icon-number">
           <i class="fa fa-comments" aria-hidden="true"></i>
@@ -24,10 +20,9 @@ function RecipeCard() {
         </div>
         <div className="icon-number">
           <Rating
-            initialRating={2}
+            initialRating={rating}
             emptySymbol="fa fa-star-o fa-x"
             fullSymbol="fa fa-star fa-x rate-color"
-            onChange={(rate) => alert(rate)}
           />
         </div>
       </div>

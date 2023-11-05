@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { addDays } from "date-fns";
 import "./LandinPage.css";
 import "react-date-range/dist/styles.css"; // main css file
@@ -8,9 +8,13 @@ import Filter from "../../Components/Filter";
 import List from "../../Components/List";
 import RecipeCard from "../../Components/RecipeCard";
 import { DateRangePicker } from "react-date-range";
+import { RecipeContext } from "../../contexts/RecipeContext";
+import SearchRecipeInput from "../../Components/SearchRecipeInput";
+import { getLoadingDataSpinner } from "../../utils/functions";
 function LandingPage() {
   const [selectedDate, setSelectedDate] = useState(null);
   const [showDatePopUp, setShowDatePopUp] = useState(false);
+  const [searchText, setSearchText] = useState("");
   const [range, setRange] = useState([
     {
       startDate: new Date(),
@@ -18,7 +22,26 @@ function LandingPage() {
       key: "selection",
     },
   ]);
-
+  const recipeContext = useContext(RecipeContext);
+  const recipeFilteredWithSerchText = recipeContext.recipes.filter((recipe) => {
+    const composed_string =
+      `${recipe.name}${recipe.ingredients}${recipe.number_of_people_served}`.toLowerCase();
+    if (searchText === "") {
+      return true;
+    } else {
+      return composed_string.includes(searchText.toLowerCase());
+    }
+  });
+  const recipeCardList = recipeFilteredWithSerchText.map((recipe) => (
+    <RecipeCard
+      key={recipe.id}
+      name={recipe.name}
+      recipe_image={recipe.recipe_image}
+      rating={recipe.rating}
+      country={recipe.country}
+      time_in_minutes={recipe.time_in_minutes}
+    />
+  ));
   const toggleShowDatePicker = () => {
     setShowDatePopUp(!showDatePopUp);
   };
@@ -26,18 +49,16 @@ function LandingPage() {
   const datePickerClass = showDatePopUp
     ? "filter-date-pop-up filter-date-pop-up--show"
     : "filter-date-pop-up";
-
+  const handleRecipeSearch = (search_text) => {
+    setSearchText(search_text);
+  };
   return (
     <div className="landing-page">
       <div className="landing-page-banner">
         <p className="banner-title">Delicious Recipes</p>
       </div>
       <div className="recipe-search">
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Search Recipe..."
-        />
+        <SearchRecipeInput handleRecipeSearch={handleRecipeSearch} />
         <div className="search-recipe-icon">
           <i className="fa fa-search" aria-hidden="true"></i>
         </div>
@@ -96,13 +117,15 @@ function LandingPage() {
       </section>
       <section className="all-recipes">
         {/* All recipe cards goes here */}
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
-        <RecipeCard />
+        {recipeContext.isLoading ? (
+          <div className="spinner-loader">{getLoadingDataSpinner()}</div>
+        ) : searchText && recipeCardList.length === 0 ? (
+          <div className="no-data">No recipes found for your search text!</div>
+        ) : recipeCardList.length === 0 ? (
+          <div className="no-data">No data Found</div>
+        ) : (
+          recipeCardList
+        )}
       </section>
     </div>
   );

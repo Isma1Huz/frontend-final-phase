@@ -16,10 +16,29 @@ import {
   storeAuthUserOnLocalStorage,
 } from "./utils/functions";
 import { AuthContext } from "./contexts/AuthContext";
+import { RecipeContext } from "./contexts/RecipeContext";
+import { is } from "date-fns/locale";
+import axios from "axios";
+import { MAIN_DOMAIN } from "./utils/constants";
 
 function RecipeRoom() {
   const [authUser, setAuthUser] = useState(null);
+  const [recipes, setRecipes] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
+  const fetchAllRecipesFromServer = () => {
+    setIsLoading(true);
+    axios
+      .get(`${MAIN_DOMAIN}/recipes`)
+      .then((resp) => {
+        if (resp.status === 200) {
+          setRecipes(resp.data);
+        }
+        setIsLoading(false);
+      })
+      .catch((err) => setIsLoading(false));
+  };
 
   const decode_jwt = (token) => {
     const decoded = jwtDecode(token);
@@ -46,6 +65,7 @@ function RecipeRoom() {
 
   useEffect(() => {
     loginFromLocalStorage();
+    fetchAllRecipesFromServer();
   }, []);
   return (
     <div>
@@ -53,14 +73,18 @@ function RecipeRoom() {
         value={{ authUser: authUser, logout: logout, handleLogin: handleLogin }}
       >
         <Header />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/recipe" element={<RecipePage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/group" element={<GroupPage />} />
-        </Routes>
+        <RecipeContext.Provider
+          value={{ recipes: recipes, isLoading: isLoading }}
+        >
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/recipe" element={<RecipePage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/group" element={<GroupPage />} />
+          </Routes>
+        </RecipeContext.Provider>
         <Footer />
       </AuthContext.Provider>
     </div>
