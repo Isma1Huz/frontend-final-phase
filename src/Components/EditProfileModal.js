@@ -5,7 +5,7 @@
 // import './EditProfile.css';
 // import profile from '../assets/profile.png';
 // const cloudinary = require('cloudinary').v2;
-
+// const authUser = useContext(AuthContext).authUser;
 // function EditProfileModal() {
 //   const [show, setShow] = useState(false);
 //   const [userData, setUserData] = useState(null);

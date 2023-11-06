@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { TrashFill } from "react-bootstrap-icons";
 import EditRecipeModal from "./EditRecipeModal";
+import { AuthContext } from "../contexts/AuthContext";
 
 const MyRecipesGroups = () => {
+  const authUser = useContext(AuthContext).authUser;
   const groups = [
     { name: "Group 1", isFavorite: true },
     { name: "Group 2", isFavorite: false },
