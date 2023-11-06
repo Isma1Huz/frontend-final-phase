@@ -4,7 +4,7 @@
 // import Modal from 'react-bootstrap/Modal';
 // import './EditProfile.css';
 // import profile from '../assets/profile.png';
-// const cloudinary = require('cloudinary').v2; 
+// const cloudinary = require('cloudinary').v2;
 
 // function EditProfileModal() {
 //   const [show, setShow] = useState(false);
@@ -19,14 +19,14 @@
 //       .catch(error => {
 //         console.error('Error fetching user data:', error);
 //       });
-//   }, []); 
+//   }, []);
 
 //   const handleClose = () => setShow(false);
 //   const handleShow = () => setShow(true);
 
 //   const updateUserProfile = (updatedUserData) => {
 //     fetch('YOUR_API_ENDPOINT', {
-//       method: 'PUT', 
+//       method: 'PUT',
 //       headers: {
 //         'Content-Type': 'application/json',
 //       },
@@ -47,7 +47,7 @@
 
 //     try {
 //       const uploadResponse = await cloudinary.uploader.upload(file.path, {
-//         upload_preset: 'YOUR_UPLOAD_PRESET', 
+//         upload_preset: 'YOUR_UPLOAD_PRESET',
 //       });
 
 //       const imageUrl = uploadResponse.secure_url;
