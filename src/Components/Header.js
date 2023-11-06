@@ -38,7 +38,7 @@ const Header = () => {
       <div className={headerPaneClasses}>
         <div className="header__left-section">
           <span className="logo">
-            Re<span>st</span>Room
+            Re<span>cipe</span>Room
           </span>
         </div>
 
