@@ -18,7 +18,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 1px; /* 6.667% */
+  line-height: 1px; 
   letter-spacing: 5px;
 }
 
@@ -97,17 +97,6 @@
   margin: 10px 5px;
   text-align: center;
 }
-
-/* .recipe-time {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.recipe-time > span {
-  display: block;
-  width: 40%;
-  margin: 0 auto;
-} */
 
 .recipe-card__footer {
   width: 100%;

@@ -5,6 +5,7 @@ import facebook from "../../assets/facebook.png";
 import twitter from "../../assets/twitter.png";
 import youtube from "../../assets/youtube.png";
 import pintrest from "../../assets/pintrest.png";
+import CreateComment from "../../Components/CreateComment";
 
 function RecipePage() {
   const ingredients = [
@@ -76,10 +77,12 @@ function RecipePage() {
           <li>
             <img src={star} alt="Star" />
           </li>
+              <CreateComment/>
         </ol>
         <h5 className="rating">
           <b>Comments</b>
         </h5>
+        
         <ul style={{ listStyleType: "none" }}>
           {comments.map((comment) => (
             <li key={comment.id}>
