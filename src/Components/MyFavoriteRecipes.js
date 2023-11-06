@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
 
 const MyFavoriteRecipes = () => {
+  const authUser = useContext(AuthContext).authUser;
   const recipes = [
     { name: "Recipe 1", isFavorite: true },
     { name: "Recipe 2", isFavorite: false },
