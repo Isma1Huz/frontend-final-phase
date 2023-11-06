@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-top-cover">
         <div className="log-copyright">
           <h6 className="logo">
-            Re<span>st</span>Room
+            Re<span>cipe</span>Room
           </h6>
           <h6 className="copyright">All Rights Reserved</h6>
           <div className="social-icons">
