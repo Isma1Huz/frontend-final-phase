@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import profile from "../../assets/profile.png";
@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import MyRecipes from "../../Components/MyRecipes";
 import MyFavoriteRecipes from "../../Components/MyFavoriteRecipes";
 import MyRecipesGroups from "../../Components/MyRecipesGroups";
+import { AuthContext } from "../../contexts/AuthContext";
 function ProfilePage() {
   const [isModalOpen, setModalOpen] = useState(false); // State variable to control the modal
 

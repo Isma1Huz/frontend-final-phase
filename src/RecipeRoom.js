@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Outlet } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 
 import ProfilePage from "./Pages/ProfilePage/ProfilePage";
@@ -17,17 +17,16 @@ import {
 } from "./utils/functions";
 import { AuthContext } from "./contexts/AuthContext";
 import { RecipeContext } from "./contexts/RecipeContext";
-import { is } from "date-fns/locale";
 import axios from "axios";
 import { MAIN_DOMAIN } from "./utils/constants";
-import {Cloudinary} from "@cloudinary/url-gen";
+import { Cloudinary } from "@cloudinary/url-gen";
 
 function RecipeRoom() {
   const [authUser, setAuthUser] = useState(null);
   const [recipes, setRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const cld = new Cloudinary({cloud: {cloudName: 'dshvbnvq0'}});
+  // const cld = new Cloudinary({ cloud: { cloudName: "dshvbnvq0" } });
 
   const fetchAllRecipesFromServer = () => {
     setIsLoading(true);
@@ -57,6 +56,7 @@ function RecipeRoom() {
   const logout = () => {
     removeAuthUserFromLocalStorage();
     setAuthUser(null);
+    navigate("/login");
   };
 
   const handleLogin = (access_token) => {
