@@ -14,8 +14,10 @@ import {
   getSendingDataSpinner,
 } from "../utils/functions";
 import { MAIN_DOMAIN } from "../utils/constants";
+import { RecipeContext } from "../contexts/RecipeContext";
 
 function CreateRecipeModal() {
+  const recipeContext = useContext(RecipeContext);
   const userDetails = getLoggedInUserDetails();
   const [show, setShow] = useState(false);
   const [uploadingToCloudinary, setUploadingToCloudinary] = useState(false);
@@ -79,12 +81,12 @@ function CreateRecipeModal() {
   });
 
   const createRecipeOnServer = (recipe) => {
-    console.log(recipe);
     axios
       .post(`${MAIN_DOMAIN}/recipes`, recipe, getHTTPHeaderWithToken())
       .then((resp) => {
         if (resp.status === 200) {
           formik.setSubmitting(false);
+          recipeContext.addRecipe(resp.data);
           alert_success("Recipe created successfully!");
         } else {
           formik.setSubmitting(false);

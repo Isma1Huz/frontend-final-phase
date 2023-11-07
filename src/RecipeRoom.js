@@ -65,6 +65,23 @@ function RecipeRoom() {
     navigate("/");
   };
 
+  const addRecipe = (recipe) => {
+    const new_recipes = [recipe, ...recipes];
+    setRecipes(new_recipes);
+  };
+
+  const deleteRecipe = (recipeId) => {
+    const new_recipes = recipes.filter((recipe) => recipe.id !== recipeId);
+    setRecipes(new_recipes);
+  };
+
+  const updateRecipe = (updatedRecipe) => {
+    const new_recipes = recipes.map((recipe) =>
+      recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+    );
+    setRecipes(new_recipes);
+  };
+
   useEffect(() => {
     loginFromLocalStorage();
     fetchAllRecipesFromServer();
@@ -76,7 +93,13 @@ function RecipeRoom() {
       >
         <Header />
         <RecipeContext.Provider
-          value={{ recipes: recipes, isLoading: isLoading }}
+          value={{
+            recipes: recipes,
+            isLoading: isLoading,
+            addRecipe: addRecipe,
+            updateRecipe: updateRecipe,
+            deleteRecipe: deleteRecipe,
+          }}
         >
           <Routes>
             <Route path="/" element={<LandingPage />} />
