@@ -78,7 +78,6 @@ function LandingPage() {
   const handleRecipeSearch = (search_text) => {
     setSearchText(search_text);
   };
-
   return (
     <div className="landing-page">
       <div className="landing-page-banner">

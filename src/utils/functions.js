@@ -1,4 +1,5 @@
 import { ColorRing } from "react-loader-spinner";
+import { jwtDecode } from "jwt-decode";
 
 const AUTH_USER = "authUser";
 
@@ -12,6 +13,14 @@ const getAuthUserFromLocalStorage = () => {
 
 const removeAuthUserFromLocalStorage = () => {
   return localStorage.removeItem(AUTH_USER);
+};
+
+const getHTTPHeaderWithToken = () => {
+  return {
+    headers: {
+      Authorization: `Bearer ${getAuthUserFromLocalStorage()}`,
+    },
+  };
 };
 
 const getSendingDataSpinner = () => {
@@ -42,10 +51,20 @@ const getLoadingDataSpinner = () => {
   );
 };
 
+const getLoggedInUserDetails = () => {
+  const token = getAuthUserFromLocalStorage();
+  if (token) {
+    const decoded = jwtDecode(getAuthUserFromLocalStorage());
+    return decoded.sub;
+  }
+};
+
 export {
   storeAuthUserOnLocalStorage,
   getAuthUserFromLocalStorage,
   removeAuthUserFromLocalStorage,
   getSendingDataSpinner,
   getLoadingDataSpinner,
+  getHTTPHeaderWithToken,
+  getLoggedInUserDetails,
 };

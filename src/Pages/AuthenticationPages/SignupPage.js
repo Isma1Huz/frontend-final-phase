@@ -82,8 +82,6 @@ const Register = () => {
       });
   };
 
-  console.log(formik);
-
   return (
     <div className="form-c">
       <div className="containerR">
