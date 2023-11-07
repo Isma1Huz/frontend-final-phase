@@ -1,17 +1,37 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../contexts/AuthContext";
+import React, { useState, useEffect } from "react";
+import Axios from "axios"; 
 
 const MyFavoriteRecipes = () => {
-  const authUser = useContext(AuthContext).authUser;
-  const recipes = [
-    { name: "Recipe 1", isFavorite: true },
-    { name: "Recipe 2", isFavorite: false },
-    { name: "Recipe 3", isFavorite: true },
-    { name: "Recipe 4", isFavorite: false },
-    { name: "Recipe 5", isFavorite: true },
-    { name: "Recipe 6", isFavorite: false },
-  ];
-  const myFavorites = recipes.filter((recipe) => recipe.isFavorite);
+  const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const myFavorites = () => {
+    const apiUrl = "http://127.0.0.1:8000/favourite_recipes/2"; // Replace with your actual API endpoint
+
+    Axios.get(apiUrl)
+      .then((response) => {
+        setRecipes(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error);
+        setLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    myFavorites();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
   return (
     <div className="second-column">
       <h4>My Favorites</h4>
@@ -35,3 +55,5 @@ const MyFavoriteRecipes = () => {
 };
 
 export default MyFavoriteRecipes;
+
+
