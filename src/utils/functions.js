@@ -23,6 +23,14 @@ const getHTTPHeaderWithToken = () => {
   };
 };
 
+const checkJwtTokenIsExpired = () => {
+  const token = getAuthUserFromLocalStorage();
+  const decodedToken = jwtDecode(token);
+  const currentDate = new Date();
+  // JWT exp is in seconds
+  return decodedToken.exp * 1000 < currentDate.getTime();
+};
+
 const getSendingDataSpinner = () => {
   return (
     <ColorRing
@@ -67,4 +75,5 @@ export {
   getLoadingDataSpinner,
   getHTTPHeaderWithToken,
   getLoggedInUserDetails,
+  checkJwtTokenIsExpired,
 };

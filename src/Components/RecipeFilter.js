@@ -61,7 +61,7 @@ const RecipeFilter = ({ setRecipeFilterDic }) => {
 
   return (
     <section className="recipe-filter">
-      <div className="recipe-filter-ingridients">
+      {/* <div className="recipe-filter-ingridients">
         <h6>Ingredients</h6>
         <select
           className="recipe-select"
@@ -75,7 +75,7 @@ const RecipeFilter = ({ setRecipeFilterDic }) => {
             </option>
           ))}
         </select>
-      </div>
+      </div> */}
       <div className="recipe-filter-country">
         <h6>Country</h6>
         <select

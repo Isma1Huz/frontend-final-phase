@@ -11,7 +11,9 @@ import GroupPage from "./Pages/GroupPage/GroupPage";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import {
+  checkJwtTokenIsExpired,
   getAuthUserFromLocalStorage,
+  getHTTPHeaderWithToken,
   removeAuthUserFromLocalStorage,
   storeAuthUserOnLocalStorage,
 } from "./utils/functions";
@@ -24,6 +26,7 @@ import { Cloudinary } from "@cloudinary/url-gen";
 function RecipeRoom() {
   const [authUser, setAuthUser] = useState(null);
   const [recipes, setRecipes] = useState([]);
+  const [myFavoriteRecipes, setMyFavoriteRecipes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   // const cld = new Cloudinary({ cloud: { cloudName: "dshvbnvq0" } });
@@ -41,6 +44,22 @@ function RecipeRoom() {
       .catch((err) => setIsLoading(false));
   };
 
+  const fetchAllMyFavoriteRecipesFromServer = () => {
+    setIsLoading(true);
+    axios
+      .get(
+        `${MAIN_DOMAIN}/favourite_recipes/${authUser?.id}`,
+        getHTTPHeaderWithToken()
+      )
+      .then((resp) => {
+        if (resp.status === 200) {
+          setMyFavoriteRecipes(resp.data);
+        }
+        setIsLoading(false);
+      })
+      .catch((err) => setIsLoading(false));
+  };
+
   const decode_jwt = (token) => {
     const decoded = jwtDecode(token);
     return decoded.sub;
@@ -49,7 +68,12 @@ function RecipeRoom() {
   const loginFromLocalStorage = () => {
     const storedAuthUser = getAuthUserFromLocalStorage();
     if (storedAuthUser) {
-      setAuthUser(decode_jwt(storedAuthUser));
+      const isTokenExpired = checkJwtTokenIsExpired();
+      if (isTokenExpired) {
+        setAuthUser(null);
+      } else {
+        setAuthUser(decode_jwt(storedAuthUser));
+      }
     }
   };
 
@@ -65,10 +89,58 @@ function RecipeRoom() {
     navigate("/");
   };
 
+  const addRecipe = (recipe) => {
+    const new_recipes = [recipe, ...recipes];
+    setRecipes(new_recipes);
+  };
+
+  const deleteRecipe = (recipeId) => {
+    const new_recipes = recipes.filter((recipe) => recipe.id !== recipeId);
+    setRecipes(new_recipes);
+  };
+
+  const updateRecipe = (updatedRecipe) => {
+    const new_recipes = recipes.map((recipe) =>
+      recipe.id === updatedRecipe.id ? updatedRecipe : recipe
+    );
+    setRecipes(new_recipes);
+  };
+
+  const removeFromFavoriteRecipes = (recipeId) => {
+    const new_favorite_recipes = myFavoriteRecipes.filter(
+      (recipe) => recipe.id !== recipeId
+    );
+    const new_recipes = recipes.map((recipe) =>
+      recipe.id === recipeId
+        ? { ...recipe, favourites: recipe.favourites - 1 }
+        : recipe
+    );
+    setMyFavoriteRecipes(new_favorite_recipes);
+    setRecipes(new_recipes);
+  };
+
+  const addToFavoriteRecipes = (recipeId) => {
+    const recipe = recipes.find((recipe) => recipe.id === recipeId);
+    const new_recipes = recipes.map((recipe) =>
+      recipe.id === recipeId
+        ? { ...recipe, favourites: recipe.favourites + 1 }
+        : recipe
+    );
+    const new_favorite_recipes = [...myFavoriteRecipes, recipe];
+    setMyFavoriteRecipes(new_favorite_recipes);
+    setRecipes(new_recipes);
+  };
+
   useEffect(() => {
     loginFromLocalStorage();
     fetchAllRecipesFromServer();
   }, []);
+
+  useEffect(() => {
+    if (authUser) {
+      fetchAllMyFavoriteRecipesFromServer();
+    }
+  }, [authUser]);
   return (
     <div>
       <AuthContext.Provider
@@ -76,16 +148,29 @@ function RecipeRoom() {
       >
         <Header />
         <RecipeContext.Provider
-          value={{ recipes: recipes, isLoading: isLoading }}
+          value={{
+            recipes: recipes,
+            myFavoriteRecipes: myFavoriteRecipes,
+            isLoading: isLoading,
+            addRecipe: addRecipe,
+            updateRecipe: updateRecipe,
+            deleteRecipe: deleteRecipe,
+            removeFromFavoriteRecipes: removeFromFavoriteRecipes,
+            addToFavoriteRecipes: addToFavoriteRecipes,
+          }}
         >
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/recipe" element={<RecipePage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/group" element={<GroupPage />} />
+            <Route path="/">
+              <Route index element={<LandingPage />} />
+              <Route exact path="/recipe/:recipe_id" element={<RecipePage />} />
+            </Route>
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
+
+            <Route exact path="/profile" element={<ProfilePage />} />
+            <Route exact path="/group" element={<GroupPage />} />
           </Routes>
+          <Outlet />
         </RecipeContext.Provider>
         <Footer />
       </AuthContext.Provider>
