@@ -66,10 +66,12 @@ function LandingPage() {
   };
   const recipeCardList = filteredRecipes.map((recipe) => (
     <RecipeCard
+      id={recipe.id}
       key={recipe.id}
       name={recipe.name}
       recipe_image={recipe.recipe_image}
       rating={recipe.rating}
+      favourites={recipe.favourites}
       country={recipe.country}
       time_in_minutes={recipe.time_in_minutes}
     />
