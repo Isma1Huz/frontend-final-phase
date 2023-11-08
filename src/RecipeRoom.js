@@ -154,13 +154,17 @@ function RecipeRoom() {
           }}
         >
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/recipe/:recipe_id" element={<RecipePage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/group" element={<GroupPage />} />
+            <Route path="/">
+              <Route index element={<LandingPage />} />
+              <Route exact path="/recipe/:recipe_id" element={<RecipePage />} />
+            </Route>
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
+
+            <Route exact path="/profile" element={<ProfilePage />} />
+            <Route exact path="/group" element={<GroupPage />} />
           </Routes>
+          <Outlet />
         </RecipeContext.Provider>
         <Footer />
       </AuthContext.Provider>

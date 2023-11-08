@@ -15,6 +15,7 @@ function RecipeCard({
   rating,
   time_in_minutes,
   favourites,
+  comments,
 }) {
   const authUser = useContext(AuthContext).authUser;
   const recipeContext = useContext(RecipeContext);
@@ -68,7 +69,7 @@ function RecipeCard({
         </div>
         <div className="icon-number">
           <i className="fa fa-comments" aria-hidden="true"></i>
-          <span>100</span>
+          <span>{comments.length}</span>
         </div>
         <div className="icon-number">
           {isThisMyFavorite ? (

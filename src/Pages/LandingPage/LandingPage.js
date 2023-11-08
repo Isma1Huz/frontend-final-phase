@@ -74,6 +74,7 @@ function LandingPage() {
       favourites={recipe.favourites}
       country={recipe.country}
       time_in_minutes={recipe.time_in_minutes}
+      comments={recipe.comments}
     />
   ));
 
