@@ -11,6 +11,7 @@ import GroupPage from "./Pages/GroupPage/GroupPage";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import {
+  checkJwtTokenIsExpired,
   getAuthUserFromLocalStorage,
   getHTTPHeaderWithToken,
   removeAuthUserFromLocalStorage,
@@ -67,7 +68,12 @@ function RecipeRoom() {
   const loginFromLocalStorage = () => {
     const storedAuthUser = getAuthUserFromLocalStorage();
     if (storedAuthUser) {
-      setAuthUser(decode_jwt(storedAuthUser));
+      const isTokenExpired = checkJwtTokenIsExpired();
+      if (isTokenExpired) {
+        setAuthUser(null);
+      } else {
+        setAuthUser(decode_jwt(storedAuthUser));
+      }
     }
   };
 

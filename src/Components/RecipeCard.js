@@ -92,6 +92,7 @@ function RecipeCard({
             initialRating={rating}
             emptySymbol="fa fa-star-o fa-x"
             fullSymbol="fa fa-star fa-x rate-color"
+            readonly
           />
         </div>
       </div>

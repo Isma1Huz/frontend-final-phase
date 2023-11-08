@@ -16,6 +16,7 @@ import {
   getHTTPHeaderWithToken,
   getLoadingDataSpinner,
 } from "../../utils/functions";
+import Rating from "react-rating";
 
 function RecipePage() {
   const recipeContext = useContext(RecipeContext);
@@ -82,31 +83,22 @@ function RecipePage() {
           ))}
         </ol>
         <h5 className="rating">
-          <b>Rating</b>
+          <b>Do you want to rate?</b>
         </h5>
         <ol className="rates">
-          <li>
-            <img src={star} alt="Star" />
-          </li>
-          <li>
-            <img src={star} alt="Star" />
-          </li>
-          <li>
-            <img src={star} alt="Star" />
-          </li>
-          <li>
-            <img src={star} alt="Star" />
-          </li>
-          <li>
-            <img src={star} alt="Star" />
-          </li>
+          <Rating
+            initialRating={0}
+            emptySymbol="fa fa-star-o fa-2x"
+            fullSymbol="fa fa-star fa-2x rate-color"
+          />
+        </ol>
+
+        <h5 className="rating">
+          <b>Comments</b>
           <CreateComment
             recipe_id={recipe_id}
             addRecipeComments={addRecipeComments}
           />
-        </ol>
-        <h5 className="rating">
-          <b>Comments</b>
         </h5>
 
         <ul style={{ listStyleType: "none" }}>

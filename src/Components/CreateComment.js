@@ -58,7 +58,9 @@ function CreateComment({ recipe_id, addRecipeComments }) {
 
   return (
     <>
-      <button onClick={handleShow}>Add Comment</button>
+      <button onClick={handleShow} className="add-comment">
+        Add Comment
+      </button>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add Comment</Modal.Title>

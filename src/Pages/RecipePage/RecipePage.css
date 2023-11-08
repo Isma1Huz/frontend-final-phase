@@ -73,6 +73,18 @@
 .notification {
   margin-right: 7rem;
 }
+
+.rating b {
+  margin-right: 20px;
+}
+
+.add-comment {
+  width: max-content;
+  padding: 10px;
+  border: none;
+  background-color: #84bd00;
+  border-radius: 5px;
+}
 /* .footer {
   text-align: center;
   width: 100%;
