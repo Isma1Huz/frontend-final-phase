@@ -35,7 +35,6 @@ function EditProfileModal() {
       .then((response) => response.json())
       .then((data) => {
         setFormData(data);
-        console.log("Original data", data);
       })
       .catch((error) => {
         console.error("Error fetching profile data:", error);
@@ -75,7 +74,6 @@ function EditProfileModal() {
       .then(async (response) => {
         const data = await response.json();
         if (response.ok) {
-          console.log("Profile updated:", data);
           alert_success("Profile updated successfully!");
           handleClose();
         } else {
@@ -100,7 +98,7 @@ function EditProfileModal() {
         formData
       );
       const imageUrl = response.data.url;
-      setImage(imageUrl);
+      setFormData({ ...formData, email: imageUrl });
       setUploadingToCloudinary(false);
     } catch (err) {
       setUploadingToCloudinary(false);

@@ -6,7 +6,7 @@ import { alert_error } from "../utils/toast_messages";
 import { getHTTPHeaderWithToken } from "../utils/functions";
 import { MAIN_DOMAIN } from "../utils/constants";
 import axios from "axios";
-
+import './List.css'
 const MyFavoriteRecipes = () => {
   const authUser = useContext(AuthContext).authUser;
   const recipeContext = useContext(RecipeContext);
@@ -36,7 +36,7 @@ const MyFavoriteRecipes = () => {
   const myFavoriteList = recipeContext.myFavoriteRecipes.map(
     (recipe, index) => (
       <li key={index}>
-        <p>{recipe.name}</p>
+        <p className="myrecipename">{recipe.name}</p>
         <p id="view" onClick={() => viewRecipeDetails(recipe.id)}>
           View
         </p>

@@ -87,18 +87,17 @@ function GroupContribute() {
   
   
       <div className='members'>
-        <select onChange={(e) => handleSelectMember(e.target.value)} className='selectmembers'>
-          <option value="">Select a Member</option>
-          <option value="Member 1">Member 1</option>
-          <option value="Member 2">Member 2</option>
-          <option value="Member 2">Member 3</option>
-          <option value="Member 2">Member 4</option>
-          <option value="Member 2">Member 5</option>
-          <option value="Member 2">Member 6</option>
-          <option value="Member 2">Member 7</option>
+      <select onChange={(e) => handleSelectMember(e.target.value)} className='selectmembers'>
+        <option value="">Select a Member</option>
+        <option value="Member 1">Member 1</option>
+        <option value="Member 2">Member 2</option>
+        <option value="Member 3">Member 3</option>
+        <option value="Member 4">Member 4</option>
+        <option value="Member 5">Member 5</option>
+        <option value="Member 6">Member 6</option>
+        <option value="Member 7">Member 7</option>
+      </select>
 
-
-        </select>
         {selectedMembersList.length > 0 && (
           <div>
             <h3>Group Members</h3>

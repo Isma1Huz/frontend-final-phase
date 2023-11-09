@@ -23,7 +23,9 @@
 }
 .second-column {
   width: 40%;
-  margin: 0 4rem;
+  margin: 0 1rem 0 0;
+  position: relative;
+  left: -2rem;
 }
 .second-column h4,
 .third-column h4 {
@@ -61,8 +63,10 @@
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
-  width: 73%;
+  width: 80%;
   margin: auto;
+  position: relative;
+  right: -6rem;
 }
 #remove {
   color: #b90000;
@@ -73,9 +77,7 @@
   color: #2f601a;
   cursor: pointer;
 }
-/* .svg {
-  background-image: url(../../assets/banner.png);
-} */
+
 @media only screen and (max-width: 1200px) {
   .profileContainer {
     flex-direction: column;
@@ -94,6 +96,8 @@
   .groupsbtn {
     flex-direction: column;
     position: relative;
+    width: 100%;
+    right: 0;
   }
   .groupsitem {
     width: 100%;
@@ -104,7 +108,7 @@
     padding: 2rem;
     justify-content: space-between;
     position: relative;
-    bottom: -25rem;
+    bottom: -32rem;
     z-index: 1;
   }
   .invitelist {
@@ -133,6 +137,7 @@
     flex-direction: column;
     position: relative;
     width: 100%;
+    right: 0;
   }
   .groups ul li {
     width: 100%;
@@ -148,6 +153,7 @@
     position: relative;
     bottom: -35rem;
     z-index: 1;
+    top: 10rem;
     padding: 0;
     margin: 0;
   }

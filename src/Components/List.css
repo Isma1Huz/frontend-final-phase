@@ -27,3 +27,11 @@
   font-size: 14px;
   color: #777;
 }
+
+.myrecipeitem {
+  width: 100%;
+}
+.myrecipename {
+  width: 9rem;
+  word-wrap: break-word;
+}
