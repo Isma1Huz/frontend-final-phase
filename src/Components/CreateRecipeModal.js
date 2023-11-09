@@ -102,7 +102,6 @@ function CreateRecipeModal() {
   const addSeparator = (txt) => {
     return txt.replaceAll(".", "\n");
   };
-  console.log(formik);
   return (
     <>
       <button onClick={handleShow}>Create a recipe</button>

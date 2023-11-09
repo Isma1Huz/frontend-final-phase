@@ -35,7 +35,7 @@ function EditProfileModal() {
       .then((response) => response.json())
       .then((data) => {
         setFormData(data);
-        console.log( 'Original data', data);
+        console.log("Original data", data);
       })
       .catch((error) => {
         console.error("Error fetching profile data:", error);
@@ -59,19 +59,18 @@ function EditProfileModal() {
       profile_photo: image || authUser?.profile_photo || "",
       country: formData.country || authUser?.country || "",
       phone_number: authUser?.phone_number || "",
-      favourite_recepes: authUser?.favourite_recepes || [],
     };
-   console.log( 'Updated Data', updatedData);
+    console.log("Updated Data", updatedData);
     const headers = {
-      'Accept': 'application/json',
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
+      Accept: "application/json",
+      Authorization: token.headers.Authorization,
+      "Content-Type": "application/json",
     };
-  
+
     fetch(`${MAIN_DOMAIN}/users/${id}`, {
-      method: 'PUT',
+      method: "PUT",
       headers: headers,
-      body: JSON.stringify(updatedData)
+      body: JSON.stringify(updatedData),
     })
       .then(async (response) => {
         const data = await response.json();
@@ -88,7 +87,6 @@ function EditProfileModal() {
         alert_error("Error updating profile. Please try again.");
       });
   };
-  
 
   const storeProfileImageOnCloudinary = async (file) => {
     setUploadingToCloudinary(true);
@@ -132,7 +130,11 @@ function EditProfileModal() {
             {image ? (
               <img src={image} alt="user profile" className="profiling" />
             ) : authUser ? (
-              <img src={authUser.profile_photo} alt="user profile" className="profiling" />
+              <img
+                src={authUser.profile_photo}
+                alt="user profile"
+                className="profiling"
+              />
             ) : null}
           </div>
           <input
