@@ -39,10 +39,10 @@
 
 # Technologies Used
 The following have been used on this project:
--REACT js.
--Cascading Style Sheet.
--Figma.
--HTML.
+-REACT js.  
+-Cascading Style Sheet.  
+-Figma.  
+-HTML.  
 
 # CONTRIBUTE
 If you feel you can contribute to this project kindly follow the steps below :
