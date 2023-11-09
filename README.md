@@ -29,37 +29,37 @@
 
 
 ## USAGE.
--Click this link to view the app - https://recipe-room-api.onrender.com/docs
--Register a new user by creating an account
--Login to your new account
--View recipes on the page and click on recipes to view details.
--"Like" a recipe to add it to your favorites list
--Click on your profile picture to view your details
--Create recipes and view your favorites under your profile page.
+-Click this link to view the app - https://recipe-room-api.onrender.com/docs.  
+-Register a new user by creating an account.  
+-Login to your new account.  
+-View recipes on the page and click on recipes to view details.  
+-"Like" a recipe to add it to your favorites list.  
+-Click on your profile picture to view your details.  
+-Create recipes and view your favorites under your profile page.  
 
 # Technologies Used
-The following have been used on this project:
+The following have been used on this project:   
 -REACT js.  
 -Cascading Style Sheet.  
 -Figma.  
 -HTML.  
 
 # CONTRIBUTE
-If you feel you can contribute to this project kindly follow the steps below :
--Clone the repository: git clone [<repository-url>](https://github.com/Isma1Huz/frontend-final-phase/tree/Development)
--Navigate to the cloned repository. i.e. cd final-project (Navigate to the location of the cloned repository on your local machine.)
--Open the cloned repository with an IDE of your choice (VS code recommended)
--Install dependencies: npm install
--Activate environment:  npm start
--Make changes in the code and see how the app is affected.
+If you feel you can contribute to this project kindly follow the steps below :   
+-Clone the repository: git clone [<repository-url>](https://github.com/Isma1Huz/frontend-final-phase/tree/Development)  
+-Navigate to the cloned repository. i.e. cd final-project (Navigate to the location of the cloned repository on your local machine.)  
+-Open the cloned repository with an IDE of your choice (VS code recommended)  
+-Install dependencies: npm install  
+-Activate environment:  npm start  
+-Make changes in the code and see how the app is affected.  
 
 
 # Authors
--John Maluki - https://github.com/john-maluki
--Ismael Hussein - https://github.com/Isma1Huz
--Ubah Feisal - https://github.com/ubahfeisal
--Phillip Lloyd - https://github.com/PhillipOdd
--Collins Kiarie - https://github.com/Kiarie-Kariuki
+-John Maluki - https://github.com/john-maluki  
+-Ismael Hussein - https://github.com/Isma1Huz  
+-Ubah Feisal - https://github.com/ubahfeisal  
+-Phillip Lloyd - https://github.com/PhillipOdd  
+-Collins Kiarie - https://github.com/Kiarie-Kariuki  
 
 # Copyright
 Released under the MIT License. See the LICENSE file.
