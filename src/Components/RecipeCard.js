@@ -7,6 +7,10 @@ import axios from "axios";
 import { getHTTPHeaderWithToken } from "../utils/functions";
 import { alert_error } from "../utils/toast_messages";
 import { MAIN_DOMAIN } from "../utils/constants";
+import "./RecipeCard.css";
+import upsvg from "../assets/upsvg.png";
+import downsvg from "../assets/downsvg.png";
+
 
 function RecipeCard({
   id,
@@ -56,6 +60,8 @@ function RecipeCard({
   };
   return (
     <div className={`recipe-card ${authUser ? "recipe-card--pointer" : null}`}>
+      <img src={upsvg} className="up-svg"/>
+      <img src={downsvg} className="down-svg"/>
       <img
         className="recipe-photo"
         src={recipe_image}

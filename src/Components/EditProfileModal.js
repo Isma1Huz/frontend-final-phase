@@ -1,94 +1,171 @@
-// import { useState, useEffect } from 'react';
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import Modal from 'react-bootstrap/Modal';
-// import './EditProfile.css';
-// import profile from '../assets/profile.png';
-// const cloudinary = require('cloudinary').v2;
-// const authUser = useContext(AuthContext).authUser;
-// function EditProfileModal() {
-//   const [show, setShow] = useState(false);
-//   const [userData, setUserData] = useState(null);
+import React, { useState, useContext, useEffect } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import axios from "axios";
+import { AuthContext } from "../contexts/AuthContext";
+import { MAIN_DOMAIN } from "../utils/constants";
+import { alert_error, alert_success } from "../utils/toast_messages";
+import {
+  getHTTPHeaderWithToken,
+  getLoggedInUserDetails,
+  getSendingDataSpinner,
+} from "../utils/functions";
 
-//   useEffect(() => {
-//     fetch('YOUR_API_ENDPOINT')
-//       .then(response => response.json())
-//       .then(data => {
-//         setUserData(data);
-//       })
-//       .catch(error => {
-//         console.error('Error fetching user data:', error);
-//       });
-//   }, []);
+function EditProfileModal() {
+  const [show, setShow] = useState(false);
+  const authUser = useContext(AuthContext).authUser;
+  const [uploadingToCloudinary, setUploadingToCloudinary] = useState(false);
+  const [image, setImage] = useState("");
+  const [formData, setFormData] = useState({
+    profile_photo: image || authUser?.profile_photo || "",
+    first_name: authUser?.first_name || "",
+    last_name: authUser?.last_name || "",
+    email: authUser?.email || "",
+    country: authUser?.country || "",
+  });
 
-//   const handleClose = () => setShow(false);
-//   const handleShow = () => setShow(true);
+  const id = getLoggedInUserDetails()?.id;
 
-//   const updateUserProfile = (updatedUserData) => {
-//     fetch('YOUR_API_ENDPOINT', {
-//       method: 'PUT',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(updatedUserData),
-//     })
-//       .then(response => response.json())
-//       .then(data => {
-//         console.log('User data updated successfully:', data);
-//         handleClose();
-//       })
-//       .catch(error => {
-//         console.error('Error updating user data:', error);
-//       });
-//   };
+  useEffect(() => {
+    getProfileData();
+  }, [id]);
 
-//   const handleProfilePictureChange = async (event) => {
-//     const file = event.target.files[0];
+  const getProfileData = () => {
+    fetch(`${MAIN_DOMAIN}/users/${id}`, getHTTPHeaderWithToken())
+      .then((response) => response.json())
+      .then((data) => {
+        setFormData(data);
+        console.log( 'Original data', data);
+      })
+      .catch((error) => {
+        console.error("Error fetching profile data:", error);
+      });
+  };
 
-//     try {
-//       const uploadResponse = await cloudinary.uploader.upload(file.path, {
-//         upload_preset: 'YOUR_UPLOAD_PRESET',
-//       });
+  const handleClose = () => setShow(false);
+  const handleShow = () => {
+    getProfileData();
+    setShow(true);
+  };
 
-//       const imageUrl = uploadResponse.secure_url;
-//       const updatedUserData = {
-//         ...userData,
-//         profilePicture: imageUrl,
-//       };
-//       updateUserProfile(updatedUserData);
-//     } catch (error) {
-//       console.error('Error uploading image to Cloudinary:', error);
-//     }
-//   };
+  const handleSaveChanges = () => {
+    const id = getLoggedInUserDetails()?.id;
+    const token = getHTTPHeaderWithToken(); // Replace with your actual JWT token
+    const updatedData = {
+      first_name: formData.first_name || authUser?.first_name || "",
+      last_name: formData.last_name || authUser?.last_name || "",
+      username: formData.email || authUser?.email || "",
+      email: formData.email || authUser?.email || "",
+      profile_photo: image || authUser?.profile_photo || "",
+      country: formData.country || authUser?.country || "",
+      phone_number: authUser?.phone_number || "",
+      favourite_recepes: authUser?.favourite_recepes || [],
+    };
+   console.log( 'Updated Data', updatedData);
+    const headers = {
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    };
+  
+    fetch(`${MAIN_DOMAIN}/users/${id}`, {
+      method: 'PUT',
+      headers: headers,
+      body: JSON.stringify(updatedData)
+    })
+      .then(async (response) => {
+        const data = await response.json();
+        if (response.ok) {
+          console.log("Profile updated:", data);
+          alert_success("Profile updated successfully!");
+          handleClose();
+        } else {
+          throw new Error(data.detail || "Error updating profile.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error updating profile:", error);
+        alert_error("Error updating profile. Please try again.");
+      });
+  };
+  
 
-//   return (
-//     <>
-//       <a onClick={handleShow} id='editProfile'>
-//         Edit Profile
-//       </a>
-//       <Modal show={show} onHide={handleClose}>
-//         <Modal.Header closeButton>
-//           <Modal.Title>Edit Profile Information</Modal.Title>
-//         </Modal.Header>
-//         <Modal.Body className='modalbody'>
-//           <div className='first-column'>
-//             <img src={userData?.profilePicture || profile} className='profiling' alt='Profile' />
-//             <h3>{userData?.name || 'User Name'}</h3>
-//             <Form.Group controlId='formFile' className='mb-3'>
-//               <Form.Label>Change Profile Picture</Form.Label>
-//               <Form.Control type='file' onChange={handleProfilePictureChange} />
-//             </Form.Group>
-//             <p>{userData?.email || 'Add Email'}</p>
-//           </div>
-//         </Modal.Body>
-//         <Modal.Footer className='modalfooter'>
-//           <Button variant='primary' onClick={handleClose} className='button'>
-//             Save Changes
-//           </Button>
-//         </Modal.Footer>
-//       </Modal>
-//     </>
-//   );
-// }
+  const storeProfileImageOnCloudinary = async (file) => {
+    setUploadingToCloudinary(true);
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "pgrhqetg");
 
-// export default EditProfileModal;
+    try {
+      const response = await axios.post(
+        "https://api.cloudinary.com/v1_1/dzv8hj78f/image/upload",
+        formData
+      );
+      const imageUrl = response.data.url;
+      setImage(imageUrl);
+      setUploadingToCloudinary(false);
+    } catch (err) {
+      setUploadingToCloudinary(false);
+      alert_error("Failed to upload image. Please try again later.");
+    }
+  };
+
+  return (
+    <>
+      <a onClick={handleShow} id="editProfile">
+        Edit Profile
+      </a>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Edit Profile Information</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="modalbody">
+          <div className="first-column ">
+            <input
+              type="file"
+              accept="image/png, image/jpeg"
+              onChange={(e) => storeProfileImageOnCloudinary(e.target.files[0])}
+            />
+            {uploadingToCloudinary ? (
+              <div className="spinner-loader">{getSendingDataSpinner()}</div>
+            ) : null}
+            {image ? (
+              <img src={image} alt="user profile" className="profiling" />
+            ) : authUser ? (
+              <img src={authUser.profile_photo} alt="user profile" className="profiling" />
+            ) : null}
+          </div>
+          <input
+            type="text"
+            className="editinputes"
+            placeholder="Email"
+            value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
+          />
+          <input
+            type="text"
+            className="editinputes"
+            placeholder="Country"
+            value={formData.country}
+            onChange={(e) =>
+              setFormData({ ...formData, country: e.target.value })
+            }
+          />
+        </Modal.Body>
+        <Modal.Footer className="modaolfooter">
+          <Button
+            variant="primary"
+            onClick={handleSaveChanges}
+            className="button footer-btn"
+          >
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
+
+export default EditProfileModal;

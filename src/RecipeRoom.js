@@ -10,6 +10,7 @@ import Login from "./Pages/AuthenticationPages/LoginPage";
 import GroupPage from "./Pages/GroupPage/GroupPage";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import GroupContribute from "./Pages/GroupPage/GroupContribute";
 import {
   checkJwtTokenIsExpired,
   getAuthUserFromLocalStorage,
@@ -169,6 +170,7 @@ function RecipeRoom() {
 
             <Route exact path="/profile" element={<ProfilePage />} />
             <Route exact path="/group" element={<GroupPage />} />
+            <Route exact path="/group/contribute" element={<GroupContribute />} />
           </Routes>
           <Outlet />
         </RecipeContext.Provider>

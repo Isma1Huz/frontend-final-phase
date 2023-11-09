@@ -31,3 +31,14 @@
     width: 78.59px;
     height: 34px;
 }
+.editinputes{
+    left: 5rem;
+    margin-top: 0.2rem ;
+    position: relative;
+
+}
+
+.footer-btn{
+    position: relative;
+    left: -10rem;
+}

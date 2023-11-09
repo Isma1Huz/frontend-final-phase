@@ -1,12 +1,18 @@
 .profileContainer {
   display: flex;
   justify-content: space-between;
-  padding: 5rem 1rem 0 1rem;
+  padding:  5rem 1rem 0 1rem;
   width: 100%;
+
 }
-.profiling {
+.username-profile{
+  margin-left: 2rem;
+}
+.profiling{
   width: 10rem;
   height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 .first-column {
   text-align: center;
@@ -67,14 +73,16 @@
   color: #2f601a;
   cursor: pointer;
 }
-.svg {
+/* .svg {
   background-image: url(../../assets/banner.png);
-}
+} */
 @media only screen and (max-width: 1200px) {
   .profileContainer {
     flex-direction: column;
   }
-
+  .username-profile{
+    text-align: center;
+  }
   .first-column {
     width: 100%;
   }
@@ -110,7 +118,9 @@
     justify-content: start;
     padding: 2rem;
   }
-
+  .username-profile{
+    text-align: center;
+    }
   .first-column {
     width: 100%;
   }

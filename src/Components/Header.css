@@ -1,5 +1,7 @@
 .header {
   padding: 0 0 0 20px;
+  font-weight: bolder;
+
 }
 
 .header__icon {

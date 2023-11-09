@@ -4,6 +4,7 @@ import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { RecipeContext } from "../contexts/RecipeContext";
+import './filter.css'
 
 const RecipeFilter = ({ setRecipeFilterDic }) => {
   const recipeContext = useContext(RecipeContext);
@@ -76,6 +77,43 @@ const RecipeFilter = ({ setRecipeFilterDic }) => {
           ))}
         </select>
       </div> */}
+        <div className="recipe-filter-date">
+        <div className="date-title">
+          Creation Date{" "}
+          <i
+            className="fa fa-calendar fa-1x"
+            aria-hidden="true"
+            onClick={toggleShowDatePicker}
+          ></i>
+          <i className="fa fa-repeat" aria-hidden="true"></i>
+        </div>
+        <b className="dating">{`${formatedFieldDate(
+            range[0]["startDate"]
+          ).toString()}  TO ${formatedFieldDate(
+            range[0]["endDate"]
+          ).toString()}`}</b>{" "}
+      
+      </div>
+        <div className={datePickerClass}>
+        
+        <DateRangePicker
+          onChange={(item) => {
+            setRange([item.selection]);
+            setRecipeFilterDic((current) => ({
+              ...current,
+              created_at: [
+                formatedFieldDate(item.selection.startDate),
+                formatedFieldDate(item.selection.endDate),
+              ],
+            }));
+          }}
+          showSelectionPreview={true}
+          moveRangeOnFirstSelection={false}
+          months={2}
+          ranges={range}
+          direction="horizontal"
+        />
+      </div>
       <div className="recipe-filter-country">
         <h6>Country</h6>
         <select
@@ -95,45 +133,12 @@ const RecipeFilter = ({ setRecipeFilterDic }) => {
         <h6>No. of people served</h6>
         <input
           type="number"
+          className="recipefilterinput"
           name="number_of_people_served"
           onChange={handleFilterChange}
         />
       </div>
-      <div className="recipe-filter-date">
-        <div className="date-title">
-          Creation Date{" "}
-          <b>{`${formatedFieldDate(
-            range[0]["startDate"]
-          ).toString()} to ${formatedFieldDate(
-            range[0]["endDate"]
-          ).toString()}`}</b>{" "}
-          <i
-            className="fa fa-calendar fa-1x"
-            aria-hidden="true"
-            onClick={toggleShowDatePicker}
-          ></i>
-          <i className="fa fa-repeat" aria-hidden="true"></i>
-        </div>
-        <div className={datePickerClass}>
-          <DateRangePicker
-            onChange={(item) => {
-              setRange([item.selection]);
-              setRecipeFilterDic((current) => ({
-                ...current,
-                created_at: [
-                  formatedFieldDate(item.selection.startDate),
-                  formatedFieldDate(item.selection.endDate),
-                ],
-              }));
-            }}
-            showSelectionPreview={true}
-            moveRangeOnFirstSelection={false}
-            months={2}
-            ranges={range}
-            direction="horizontal"
-          />
-        </div>
-      </div>
+    
       <div className="recipe-filter-rating">
         <h6>Ratings</h6>
         <select

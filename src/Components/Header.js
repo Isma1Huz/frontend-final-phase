@@ -79,7 +79,7 @@ const Header = () => {
                     />
                     <h2 className="username-profile">{`${authUser.first_name} ${authUser.last_name}`}</h2>
                     <Link to="profile" className="edit-profile">
-                      Your profile
+                      My profile
                     </Link>
                     <button className="logout" onClick={handleLogout}>
                       Logout

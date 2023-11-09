@@ -1,9 +1,9 @@
 .img-cl {
   width: 65%;
-  height: 85vh;
+  height: 106.5vh;
   position: relative;
   z-index: 3;
-  top: 2rem;
+  top: -2.7rem;
   object-fit: cover;
 }
 .containerl {

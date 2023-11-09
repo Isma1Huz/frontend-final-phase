@@ -14,6 +14,7 @@ import MyFavoriteRecipes from "../../Components/MyFavoriteRecipes";
 import MyRecipesGroups from "../../Components/MyRecipesGroups";
 import { AuthContext } from "../../contexts/AuthContext";
 function ProfilePage() {
+  
   const [isModalOpen, setModalOpen] = useState(false); // State variable to control the modal
 
   const recipes = [
@@ -23,7 +24,9 @@ function ProfilePage() {
     { name: "Recipe 4", isFavorite: false },
     { name: "Recipe 5", isFavorite: true },
     { name: "Recipe 6", isFavorite: false },
-  ];
+  ];  
+  const authUser = useContext(AuthContext).authUser;
+
   const groups = [
     { name: "Group 1", isFavorite: true },
     { name: "Group 2", isFavorite: false },
@@ -32,14 +35,20 @@ function ProfilePage() {
 
   const myRecipes = recipes.filter((recipe) => !recipe.isFavorite);
   const myFavorites = recipes.filter((recipe) => recipe.isFavorite);
+  const firstName = authUser ? authUser.first_name : "";
+  const lastName = authUser ? authUser.last_name : "";
 
   return (
     <div>
       <div className="profileContainer">
-        <div className="first-column">
-          <img src={profile} className="profiling" alt="Profile" />
-          <h3>Ismael Hussein</h3>
-          <p>{/* <EditProfileModal /> */}</p>
+      <div className="first-column">
+        {authUser ? (
+          <img src={authUser?.profile_photo} alt="user profile" className='profiling' />
+        ) : null}
+          <h3 className="username-profile">{`${firstName} ${lastName}`}</h3>
+          <p>
+            <EditProfileModal />
+          </p>
         </div>
         {/* My recipes */}
         <MyRecipes />
