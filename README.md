@@ -39,13 +39,13 @@
 
 # Technologies Used
 The following have been used on this project:
--REACT js
--Cascading Style Sheet
--Figma
--HTML
+-REACT js.
+-Cascading Style Sheet.
+-Figma.
+-HTML.
 
 # CONTRIBUTE
-If you feel you can contribute to this project kindly follow the steps below :-
+If you feel you can contribute to this project kindly follow the steps below :
 -Clone the repository: git clone [<repository-url>](https://github.com/Isma1Huz/frontend-final-phase/tree/Development)
 -Navigate to the cloned repository. i.e. cd final-project (Navigate to the location of the cloned repository on your local machine.)
 -Open the cloned repository with an IDE of your choice (VS code recommended)
