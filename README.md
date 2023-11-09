@@ -8,28 +8,28 @@
 # KEY FEATURES
 ## Managing Recipes
 
--Viewing all Recipes in the system
+-Viewing all Recipes in the system  
 ![Screenshot from 2023-11-09 21-46-24](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/aecd0316-e716-44db-a64d-ef4d4101357e)
--View Recipe details.
--Creating a new recipe in the system.
+-View Recipe details.  
+-Creating a new recipe in the system.  
 ![Screenshot from 2023-11-09 22-12-19](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/0c1dc036-e98a-4688-86d5-37a7b4e7cdd2)
--Updating recipe details.
--Removing recipes from the system.
--Add a recipe to your favorites list.
--Share your recipes with friends on social media.
+-Updating recipe details.  
+-Removing recipes from the system.  
+-Add a recipe to your favorites list.  
+-Share your recipes with friends on social media.  
 
 
 ## Managing User
--Registering a new user in the system
+-Registering a new user in the system  
 ![Screenshot from 2023-11-09 21-44-00](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/017d8a9b-8d2c-4a28-b830-269da0ba042f)
--Updating user details
+-Updating user details  
 ![Screenshot from 2023-11-09 21-45-28](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/3a37502f-4a8e-4add-91a8-30d6e23f3769)
--Update user profile picture
--List the favorite recipes of the user
+-Update user profile picture  
+-List the favorite recipes of the user  
 
 
 ## USAGE.
--Click this link to view the app - https://recipe-room-api.onrender.com/docs.  
+-Click this link to view the app - https://recipe-room-api.onrender.com/docs.   
 -Register a new user by creating an account.  
 -Login to your new account.  
 -View recipes on the page and click on recipes to view details.  
