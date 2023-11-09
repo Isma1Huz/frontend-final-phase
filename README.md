@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+#RECIPE-ROOM APP (GROUP-4 PROJECT)
+Recipe Room is a dynamic and user-friendly React web application that empowers users to explore a diverse collection of recipes while also providing them with the creative space to contribute their own culinary masterpieces. Whether you're looking for inspiration in the kitchen or eager to share your signature dishes, Recipe Room is your go-to platform for all things culinary.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Problem Statement:
+Many existing platforms lack the seamless integration of viewing and contributing recipes, leading to a fragmented user experience. This presents an opportunity for a React-based recipe app to address these pain points, offering users a cohesive platform that simplifies the process of exploring diverse recipes while fostering a collaborative community for sharing and creating culinary delights
 
-## Available Scripts
 
-In the project directory, you can run:
+#Application Key Features
+##Managing Recipes
 
-### `npm start`
+Viewing all Recipes in the system
+View Recipe details
+Creating a new recipe in the system
+Updating recipe details
+Removing recipes from the system
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##Managing User
+Registering a new user in the system
+![Screenshot from 2023-11-09 21-44-00](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/017d8a9b-8d2c-4a28-b830-269da0ba042f)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Updating user details
+![Screenshot from 2023-11-09 21-45-28](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/3a37502f-4a8e-4add-91a8-30d6e23f3769)
 
-### `npm test`
+Update user profile picture
+List favourite recipes of the user
+Managing Recipes
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Viewing all Recipes in the system
+![Screenshot from 2023-11-09 21-46-24](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/aecd0316-e716-44db-a64d-ef4d4101357e)
 
-### `npm run build`
+##Creating new recipes
+Updating recipes details
+Removing recipes from the system
+Creating a recipe as a group.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##USAGE.
+-Register a new user by creating an account
+-Login to your new account
+-View recipes on the page and click on recipes to view details.
+-'Like' a recipe to add it to your favourites list
+-Click on your profile picture to view your details
+-Create recipes and view your favourites under your profile page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#Technologies Used
+The following have been used on this project:
+-REACT js
+-Cascading Style Sheet
+-Figma
+-HTML
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#Project Setup
+-Clone the repository: git clone [<repository-url>](https://github.com/Isma1Huz/frontend-final-phase/tree/Development)
+-Navigate to cloned repository.i.e cd final-project (Navigate to the location of the cloned repository on your local machine.)
+-Install dependencies: npm install
+-Activate environment:  npm start
 
-### `npm run eject`
+#Authors
+-John Maluki - https://github.com/john-maluki
+-Ismael Hussein - https://github.com/Isma1Huz
+-Ubah Feisal - https://github.com/ubahfeisal
+-Phillip Lloyd - https://github.com/PhillipOdd
+-Collins Kiarie - https://github.com/Kiarie-Kariuki
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#Copyright
+Released under the MIT License. See the LICENSE file.
