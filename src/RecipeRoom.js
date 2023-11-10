@@ -35,7 +35,7 @@ function RecipeRoom() {
   const fetchAllRecipesFromServer = () => {
     setIsLoading(true);
     axios
-      .get(`${MAIN_DOMAIN}/recipes`)
+      .get(`${MAIN_DOMAIN}/recipes`, { "Access-Control-Allow-Origin": "*" })
       .then((resp) => {
         if (resp.status === 200) {
           setRecipes(resp.data);
@@ -170,7 +170,11 @@ function RecipeRoom() {
 
             <Route exact path="/profile" element={<ProfilePage />} />
             <Route exact path="/group" element={<GroupPage />} />
-            <Route exact path="/group/contribute" element={<GroupContribute />} />
+            <Route
+              exact
+              path="/group/contribute"
+              element={<GroupContribute />}
+            />
           </Routes>
           <Outlet />
         </RecipeContext.Provider>

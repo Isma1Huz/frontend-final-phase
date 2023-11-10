@@ -47,7 +47,9 @@ const Register = () => {
 
   const handleRegister = (user) => {
     axios
-      .post(`${MAIN_DOMAIN}/auth/register`, user)
+      .post(`${MAIN_DOMAIN}/auth/register`, user, {
+        "Access-Control-Allow-Origin": "*",
+      })
       .then((resp) => {
         if (resp.status === 201) {
           formik.setSubmitting(false);
