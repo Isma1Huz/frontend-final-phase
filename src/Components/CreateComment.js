@@ -56,6 +56,7 @@ function CreateComment({ recipe_id, addRecipeComments }) {
       });
   };
 
+  // return statement
   return (
     <>
       <button onClick={handleShow} className="add-comment">
