@@ -1,3 +1,3 @@
-const MAIN_DOMAIN = "https://recipe-room-api.onrender.com";
+const MAIN_DOMAIN = "http://localhost:8000";
 
 export { MAIN_DOMAIN };
