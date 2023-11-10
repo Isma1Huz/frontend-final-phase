@@ -1,0 +1,90 @@
+
+.recipe-filter {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 1rem;
+  }
+ .recipe-filter div {
+    flex: 1 1 300px;
+    margin-bottom: 20px;
+    margin-left: 1rem;
+  }
+  .recipe-filter h6 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .recipe-select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+   
+  .filter-date-pop-up--show {
+    display: block;
+  }
+  .recipefilterinput{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+  }
+  
+  .date-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .dating{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 1rem;
+    width: 100%;
+  }
+  .fa-calendar, .fa-repeat {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .recipe-filter {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    border-bottom: 0.1px solid #8080805d;
+  }
+  
+  .filter-date-pop-up {
+    display: none;
+    position: absolute;
+    left: 20%;
+    top: 50px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    z-index: 100;
+  }
+  
+  .filter-date-pop-up--show {
+    display: block;
+  }
+    
+  .recipe-filter-date .date-title {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .date-title i {
+    cursor: pointer;
+  }

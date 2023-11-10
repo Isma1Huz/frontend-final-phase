@@ -1,0 +1,47 @@
+.group-contribute-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem ;
+    text-align: center;
+}
+.contribute {
+    /* max-height: fit-content; */
+    width: 100%;
+    display: flex;
+}
+.save {
+    background-color: #509e2f;
+    border-radius: 10px;
+    width: 78.59px;
+    height: 34px;
+    width: 152px;
+  }
+.group-ingredients{
+    display: grid;
+    grid-template-rows: 1fr 1fr ;
+    width: 60%;
+    height: 8rem;
+    margin-left: 2rem;
+}
+.group-ingredients form  input{
+margin-right: 1rem;
+border-radius: 10px;
+padding: 0.5rem;
+width: 40%;
+}
+.contribute .left {
+    width: 70%;
+}
+.members{
+    position: relative;
+    float:right;
+    width: 30%;
+    top: 5rem;
+
+}
+.selectmembers{
+    padding: 0.5rem;
+    width: 70%;
+    border-radius: 10px;
+}
