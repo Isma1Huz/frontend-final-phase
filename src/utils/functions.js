@@ -19,6 +19,7 @@ const getHTTPHeaderWithToken = () => {
   return {
     headers: {
       Authorization: `Bearer ${getAuthUserFromLocalStorage()}`,
+      "Access-Control-Allow-Origin": "*",
     },
   };
 };
