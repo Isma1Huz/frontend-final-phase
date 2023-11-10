@@ -11,6 +11,7 @@
 -Viewing all Recipes in the system  
 ![Screenshot from 2023-11-10 10-27-18](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/2442ee11-66d3-450f-b23e-0929a59c08e9)
 -View Recipe details.  
+![Screenshot from 2023-11-09 22-12-19](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/07ac22e6-fdec-45ac-a0d6-9eb24af33a35)
 -Creating a new recipe in the system.  
 ![Screenshot from 2023-11-09 22-12-19](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/0c1dc036-e98a-4688-86d5-37a7b4e7cdd2)  
 -Updating recipe details.  
