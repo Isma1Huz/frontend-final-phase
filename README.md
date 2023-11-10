@@ -51,7 +51,8 @@ If you feel you can contribute to this project kindly follow the steps below :
 -Open the cloned repository with an IDE of your choice (VS code recommended)  
 -Install dependencies: npm install  
 -Activate environment:  npm start  
--Make changes in the code and see how the app is affected.  
+-Make changes in the code and see how the app is affected. 
+-Kindly direct any questions to our scrum master John (john.maluki@student.moringaschool.com)
 
 
 # Authors
