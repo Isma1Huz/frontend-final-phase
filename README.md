@@ -62,7 +62,8 @@ The following have been used on this project:
 
 # Deployment link 
 - https://recipe-room-api.onrender.com
-- 
+- https://frontend-final-phase.vercel.app/
+  
 # Authors
 - John Maluki - https://github.com/john-maluki
 - Ismael Hussein - https://github.com/Isma1Huz
