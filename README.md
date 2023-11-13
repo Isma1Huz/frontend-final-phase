@@ -15,8 +15,6 @@
 - Removing recipes from the system
 
 ## Managing User
-![Screenshot from 2023-11-13 11-06-08](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/8f41ddc2-66b4-4208-9f7f-e8fda6a67051)
-![Screenshot from 2023-11-13 11-05-57](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/1cc9a44c-839f-4f91-b19b-6c926cf62d12)
 
 - Registering a new user in the system
 ![Screenshot from 2023-11-09 21-44-00](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/017d8a9b-8d2c-4a28-b830-269da0ba042f)
@@ -25,11 +23,14 @@
 ![Screenshot from 2023-11-09 21-45-28](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/3a37502f-4a8e-4add-91a8-30d6e23f3769)
 
 - Update user profile picture
-List favourite recipes of the user
+List the favorite recipes of the user
 - Managing Recipes
 
 - Viewing all Recipes in the system
-![Screenshot from 2023-11-09 21-46-24](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/aecd0316-e716-44db-a64d-ef4d4101357e)
+-![Screenshot from 2023-11-13 11-06-08](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/8f41ddc2-66b4-4208-9f7f-e8fda6a67051)
+-![Screenshot from 2023-11-09 21-46-24](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/aecd0316-e716-44db-a64d-ef4d4101357e)
+-![Screenshot from 2023-11-13 11-05-57](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/1cc9a44c-839f-4f91-b19b-6c926cf62d12)
+
 
 ## Creating new recipes
 Updating recipes details
@@ -40,9 +41,9 @@ Creating a recipe as a group.
 - Register a new user by creating an account
 - Login to your new account
 - View recipes on the page and click on recipes to view details.
-- 'Like' a recipe to add it to your favourites list
+- 'Like' a recipe to add it to your favorites list
 - Click on your profile picture to view your details
-- Create recipes and view your favourites under your profile page.
+- Create recipes and view your favorites under your profile page.
 
 # Technologies Used
 The following have been used on this project:
@@ -53,7 +54,7 @@ The following have been used on this project:
 
 # Project Setup
 - Clone the repository: git clone [<repository-url>](https://github.com/Isma1Huz/frontend-final-phase/tree/Development)
-- Navigate to cloned repository.i.e cd final-project (Navigate to the location of the cloned repository on your local machine.)
+- Navigate to the cloned repository. i.e. cd final-project (Navigate to the location of the cloned repository on your local machine.)
 - Install dependencies: npm install
 - Activate environment:  npm start
 
