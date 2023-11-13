@@ -17,9 +17,8 @@
 ## Managing User
 
 - Registering a new user in the system
-file:///home/ismael/Pictures/Screenshots/Screenshot%20from%202023-11-13%2011-31-22.png
-
-- 
+![login](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/f43adde2-54ae-484e-a5c9-8e0046f7d8ad)
+![signup](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/dddd716a-da31-4b73-b0c8-c126a5323983)
 
 - Updating user details
 
@@ -28,6 +27,11 @@ List the favorite recipes of the user
 - Managing Recipes
 
 - Viewing all Recipes in the system
+![landing](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/299ed28d-325e-47fc-87c5-e4d0f26a1faa)
+![recipes](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/6b8f0698-8c8f-43c6-ac92-5d1e1ce9856c)
+
+![profile](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/96a16576-b364-4023-b148-4659df4ea5fb)
+![edit](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/56c46eb5-ff99-45dd-84fa-f77654c095b5)
 
 
 ## Creating new recipes
