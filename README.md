@@ -17,18 +17,17 @@
 ## Managing User
 
 - Registering a new user in the system
-![Screenshot from 2023-11-09 21-44-00](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/017d8a9b-8d2c-4a28-b830-269da0ba042f)
+file:///home/ismael/Pictures/Screenshots/Screenshot%20from%202023-11-13%2011-31-22.png
+
+- 
 
 - Updating user details
-![Screenshot from 2023-11-09 21-45-28](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/3a37502f-4a8e-4add-91a8-30d6e23f3769)
 
 - Update user profile picture
 List the favorite recipes of the user
 - Managing Recipes
 
 - Viewing all Recipes in the system
-- ![Screenshot from 2023-11-13 11-05-57](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/1cc9a44c-839f-4f91-b19b-6c926cf62d12)
--![Screenshot from 2023-11-09 21-46-24](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/aecd0316-e716-44db-a64d-ef4d4101357e)
 
 
 ## Creating new recipes
