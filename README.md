@@ -60,12 +60,16 @@ The following have been used on this project:
 - Install dependencies: npm install
 - Activate environment:  npm start
 
+# Deployment link 
+- https://recipe-room-api.onrender.com
+- 
 # Authors
 - John Maluki - https://github.com/john-maluki
 - Ismael Hussein - https://github.com/Isma1Huz
 - Ubah Feisal - https://github.com/ubahfeisal
 - Phillip Lloyd - https://github.com/PhillipOdd
 - Collins Kiarie - https://github.com/Kiarie-Kariuki
+
 
 ## The MIT License (MIT)
 #### Copyright (c) 2023 
