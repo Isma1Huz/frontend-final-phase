@@ -15,6 +15,9 @@
 - Removing recipes from the system
 
 ## Managing User
+![Screenshot from 2023-11-13 11-06-08](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/8f41ddc2-66b4-4208-9f7f-e8fda6a67051)
+![Screenshot from 2023-11-13 11-05-57](https://github.com/Isma1Huz/frontend-final-phase/assets/132744360/1cc9a44c-839f-4f91-b19b-6c926cf62d12)
+
 - Registering a new user in the system
 ![Screenshot from 2023-11-09 21-44-00](https://github.com/Isma1Huz/frontend-final-phase/assets/135106680/017d8a9b-8d2c-4a28-b830-269da0ba042f)
 
